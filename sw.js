@@ -24,11 +24,15 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
+  precacheUrls.push('/2018/08/Luogu-P1311/');
+
+  precacheUrls.push('/2018/08/Luogu-P1514/');
+
+  precacheUrls.push('/2018/08/Luogu-P1541/');
+
   precacheUrls.push('/2018/08/syzoj-setup/');
 
   precacheUrls.push('/2018/08/Luogu-P1196/');
-
-  precacheUrls.push('/2018/08/Luogu-P1967/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};
