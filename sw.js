@@ -24,6 +24,8 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
+  precacheUrls.push('/2018/10/Game-Theory-Note/');
+
   precacheUrls.push('/2018/09/Luogu-P1403/');
 
   precacheUrls.push('/2018/09/Number-Theory-Note/');
@@ -31,8 +33,6 @@ var precacheUrls = [];
   precacheUrls.push('/2018/08/Luogu-P1311/');
 
   precacheUrls.push('/2018/08/Luogu-P1514/');
-
-  precacheUrls.push('/2018/08/Luogu-P1541/');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":5};
