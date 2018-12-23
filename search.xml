@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>在 Linux 下制作 Windows 启动盘</title>
+      <link href="/2018/12/Make-Windows-Boot-USB-Under-Linux/"/>
+      <url>/2018/12/Make-Windows-Boot-USB-Under-Linux/</url>
+      <content type="html"><![CDATA[<p>&#x5728; Windows &#x4E0B;&#x5236;&#x4F5C; Linux &#x542F;&#x52A8;&#x76D8;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x597D;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x3002;&#x4F46;&#x5728; Linux &#x4E0B;&#x5236;&#x4F5C; Windows &#x542F;&#x52A8;&#x76D8;&#xFF0C;&#x4F3C;&#x4E4E;&#x8BA9;&#x4EBA;&#x65E0;&#x4ECE;&#x4E0B;&#x624B;&#x3002;&#x5176;&#x5B9E;&#x5236;&#x4F5C;&#x7684;&#x65B9;&#x5F0F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x5BF9;&#x4E8E;&#x6700;&#x65B0;&#x7684; Windows 10 &#x800C;&#x8A00;&#xFF0C;&#x5236;&#x4F5C;&#x542F;&#x52A8;&#x76D8;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x5B89;&#x88C5;&#x955C;&#x50CF;&#x5185;&#x7684;&#x6587;&#x4EF6;&#x5168;&#x90E8;&#x590D;&#x5236;&#x8FDB; U &#x76D8;&#x4E2D;&#xFF0C;U &#x76D8;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x542F;&#x52A8;&#x76D8;&#x3002;&#x4F46;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#xFF1A;&#x76EE;&#x524D;&#x5927;&#x591A;&#x6570; U &#x76D8;&#x91C7;&#x7528;&#x7684;&#x662F; FAT32 &#x683C;&#x5F0F;&#x7684;&#x5206;&#x533A;&#xFF0C;&#x4F46;&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#x65E0;&#x6CD5;&#x5B58;&#x50A8;&#x5927;&#x4E8E; 32 GiB &#x7684;&#x6587;&#x4EF6;&#x3002;&#x4F46;&#x5728;&#x6700;&#x65B0;&#x7684; Windows 10 &#x5B89;&#x88C5;&#x955C;&#x50CF;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>install.wim</code> &#x7684;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x8D85;&#x8FC7;&#x4E86; 4 GiB&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x8FDB; U &#x76D8;&#x3002;&#x5FAE;&#x8F6F;&#x5B98;&#x65B9;&#x7ED9;&#x51FA;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x5C06;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5206;&#x5272;&#xFF0C;&#x4F46;&#x7ED9;&#x51FA;&#x7684;&#x547D;&#x4EE4;&#x662F; Powershell &#x547D;&#x4EE4;&#xFF0C;&#x5728; Linux &#x73AF;&#x5883;&#x4E0B;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x3002;</p><p>&#x90A3;&#x4E48;&#x5728; Linux &#x4E0B;&#x5C31;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x4E86;&#x5417;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#x5426;&#x5B9A;&#x7684;&#x3002;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#x53EB;&#x505A; <code>wimlib</code>&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5206;&#x5272; <code>.wim</code> &#x6587;&#x4EF6;&#x3002;</p><p>&#x5728; Debian &#x7CFB;&#x7CFB;&#x7EDF;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install wimlib</span><br></pre></td></tr></table></figure><p>&#x6765;&#x5B89;&#x88C5;&#x8FD9;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#x3002;</p><p>&#x5C06; Windows 10 &#x5B89;&#x88C5;&#x955C;&#x50CF;&#x6302;&#x8F7D;&#x540E;&#xFF0C;&#x8FDB;&#x5165;&#x955C;&#x50CF;&#x6587;&#x4EF6;&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd sources &amp;&amp; wimlib-imagex split install.wim install.swm 4000</span><br></pre></td></tr></table></figure><p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x5C06; <code>install.wim</code> &#x5206;&#x5272;&#x6210;&#x591A;&#x4E2A;&#x540D;&#x4E3A; <code>install[&#x5E8F;&#x53F7;].swm</code> &#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E2A;&#x5927;&#x5C0F;&#x4E0D;&#x8D85;&#x8FC7; 4000 MiB&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x653E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF0C;&#x518D;&#x5C06;&#x539F;&#x6765;&#x7684; <code>install.wim</code> &#x6587;&#x4EF6;&#x5220;&#x9664;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x5C06;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230; U &#x76D8;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A; Windows &#x542F;&#x52A8;&#x76D8;&#x5C31;&#x505A;&#x597D;&#x4E86;&#x3002;</p><p>Finita la comedia.</p>]]></content>
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>[CQOI2009] 中位数</title>
       <link href="/2018/11/CQOI2009-Median/"/>
       <url>/2018/11/CQOI2009-Median/</url>
@@ -216,9 +237,9 @@
       
         <tags>
             
-            <tag> SYZOJ </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> SYZOJ </tag>
             
         </tags>
       
