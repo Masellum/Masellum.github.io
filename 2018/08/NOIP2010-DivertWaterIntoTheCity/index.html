@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>[NOIP2010] 引水入城 - Mas&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Masellum Guo">
+<meta name="description" content=" ">
+<meta name="keywords" content="">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?90064774">
+<script src="/js/loadCSS.js"></script>
+<script>
+    loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
+    (function (d) {
+        var config = {
+                kitId: 'dwg1tuc',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h = d.documentElement, t = setTimeout(function () {
+                h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+            }, config.scriptTimeout), tk = d.createElement("script"), f = false,
+            s = d.getElementsByTagName("script")[0], a;
+        h.className += " wf-loading";
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+            a = this.readyState;
+            if (f || a && a != "complete" && a != "loaded") return;
+            f = true;
+            clearTimeout(t);
+            try {
+                Typekit.load(config)
+            } catch (e) {
+            }
+        };
+        s.parentNode.insertBefore(tk, s)
+    })(document);
+</script>
+<noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons"/>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div id="top"></div>
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://blog.masellum.me">
+                首页
+            </a>
+            <a class="a-block drawer-menu-item false" href="/archives">
+                归档
+            </a>
+
+            
+            
+            <a class="a-block drawer-menu-item false" href="/about.html">
+                关于
+            </a>
+            
+            <a class="a-block drawer-menu-item false" href="/links.html">
+                朋友们
+            </a>
+            
+
+            
+            <a class="a-block drawer-menu-item" href="/atom.xml">
+                RSS
+            </a>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Mas&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Mas&#39;s Blog</div>
+        <div class="single-column-header-subtitle">Masellum 的生活日志</div>
+    </a>
+</div>
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Mas's Blog
+        </div>
+        <div class="nav-subtitle">
+            Masellum 的生活日志
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        <a class="a-block no-tint nav-link-item false" href="/archives">
+            归档
+        </a>
+
+        
+        
+        <a class="a-block nav-link-item false" href="/about.html">
+            关于
+        </a>
+        
+        <a class="a-block nav-link-item false" href="/links.html">
+            朋友们
+        </a>
+        
+
+        
+        <a class="a-block no-tint nav-link-item" href="/atom.xml">
+            RSS
+        </a>
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2019 <a href="https://blog.masellum.me">Mas&#39;s Blog</a>
+    </div>
+</div>
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    [NOIP2010] 引水入城
+                    <div class="post-meta">
+                        <time datetime="2018-08-24T12:38:48.000Z" itemprop="datePublished">
+                            2018-08-24 20:38
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解/'>题解</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/搜索/'>搜索</a>, 
+                        
+                        <a href='/tags/动态规划/'>动态规划</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <a id="more"></a>
+<h1 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h1>
+<p><a href="https://www.luogu.org/problemnew/show/P1514" target="_blank" rel="noopener">&#x9898;&#x76EE;&#x94FE;&#x63A5;</a></p>
+<h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x9065;&#x8FDC;&#x7684;&#x56FD;&#x5EA6;&#xFF0C;&#x4E00;&#x4FA7;&#x662F;&#x98CE;&#x666F;&#x79C0;&#x7F8E;&#x7684;&#x6E56;&#x6CCA;&#xFF0C;&#x53E6;&#x4E00;&#x4FA7;&#x5219;&#x662F;&#x6F2B;&#x65E0;&#x8FB9;&#x9645;&#x7684;&#x6C99;&#x6F20;&#x3002;&#x8BE5;&#x56FD;&#x7684;&#x884C;&#x653F;&#x533A;&#x5212;&#x5341;&#x5206;&#x7279;&#x6B8A;&#xFF0C;&#x521A;&#x597D;&#x6784;&#x6210;&#x4E00;&#x4E2A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>&#xD7;</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">N \times M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.10903em;">M</span></span></span></span> &#x7684;&#x77E9;&#x5F62;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x683C;&#x5B50;&#x90FD;&#x4EE3;&#x8868;&#x4E00;&#x5EA7;&#x57CE;&#x5E02;&#xFF0C;&#x6BCF;&#x5EA7;&#x57CE;&#x5E02;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6D77;&#x62D4;&#x9AD8;&#x5EA6;&#x3002;</p>
+<figure>
+<img src="https://cdn.luogu.org/upload/pic/299.png" alt="&#x6837;&#x4F8B;&#x56FE;&#x7247;"><figcaption>&#x6837;&#x4F8B;&#x56FE;&#x7247;</figcaption>
+</figure>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x5C45;&#x6C11;&#x4EEC;&#x90FD;&#x5C3D;&#x53EF;&#x80FD;&#x996E;&#x7528;&#x5230;&#x6E05;&#x6F88;&#x7684;&#x6E56;&#x6C34;&#xFF0C;&#x73B0;&#x5728;&#x8981;&#x5728;&#x67D0;&#x4E9B;&#x57CE;&#x5E02;&#x5EFA;&#x9020;&#x6C34;&#x5229;&#x8BBE;&#x65BD;&#x3002;&#x6C34;&#x5229;&#x8BBE;&#x65BD;&#x6709;&#x4E24;&#x79CD;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#x84C4;&#x6C34;&#x5382;&#x548C;&#x8F93;&#x6C34;&#x7AD9;&#x3002;&#x84C4;&#x6C34;&#x5382;&#x7684;&#x529F;&#x80FD;&#x662F;&#x5229;&#x7528;&#x6C34;&#x6CF5;&#x5C06;&#x6E56;&#x6CCA;&#x4E2D;&#x7684;&#x6C34;&#x62BD;&#x53D6;&#x5230;&#x6240;&#x5728;&#x57CE;&#x5E02;&#x7684;&#x84C4;&#x6C34;&#x6C60;&#x4E2D;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x53EA;&#x6709;&#x4E0E;&#x6E56;&#x6CCA;&#x6BD7;&#x90BB;&#x7684;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> &#x884C;&#x7684;&#x57CE;&#x5E02;&#x53EF;&#x4EE5;&#x5EFA;&#x9020;&#x84C4;&#x6C34;&#x5382;&#x3002;&#x800C;&#x8F93;&#x6C34;&#x7AD9;&#x7684;&#x529F;&#x80FD;&#x5219;&#x662F;&#x901A;&#x8FC7;&#x8F93;&#x6C34;&#x7BA1;&#x7EBF;&#x5229;&#x7528;&#x9AD8;&#x5EA6;&#x843D;&#x5DEE;&#xFF0C;&#x5C06;&#x6E56;&#x6C34;&#x4ECE;&#x9AD8;&#x5904;&#x5411;&#x4F4E;&#x5904;&#x8F93;&#x9001;&#x3002;&#x6545;&#x4E00;&#x5EA7;&#x57CE;&#x5E02;&#x80FD;&#x5EFA;&#x9020;&#x8F93;&#x6C34;&#x7AD9;&#x7684;&#x524D;&#x63D0;&#xFF0C;&#x662F;&#x5B58;&#x5728;&#x6BD4;&#x5B83;&#x6D77;&#x62D4;&#x66F4;&#x9AD8;&#x4E14;&#x62E5;&#x6709;&#x516C;&#x5171;&#x8FB9;&#x7684;&#x76F8;&#x90BB;&#x57CE;&#x5E02;&#xFF0C;&#x5DF2;&#x7ECF;&#x5EFA;&#x6709;&#x6C34;&#x5229;&#x8BBE;&#x65BD;&#x3002;&#x7531;&#x4E8E;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> &#x884C;&#x7684;&#x57CE;&#x5E02;&#x9760;&#x8FD1;&#x6C99;&#x6F20;&#xFF0C;&#x662F;&#x8BE5;&#x56FD;&#x7684;&#x5E72;&#x65F1;&#x533A;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x6C42;&#x5176;&#x4E2D;&#x7684;&#x6BCF;&#x5EA7;&#x57CE;&#x5E02;&#x90FD;&#x5EFA;&#x6709;&#x6C34;&#x5229;&#x8BBE;&#x65BD;&#x3002;&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x4E2A;&#x8981;&#x6C42;&#x80FD;&#x5426;&#x6EE1;&#x8DB3;&#x5462;&#xFF1F;&#x5982;&#x679C;&#x80FD;&#xFF0C;&#x8BF7;&#x8BA1;&#x7B97;&#x6700;&#x5C11;&#x5EFA;&#x9020;&#x51E0;&#x4E2A;&#x84C4;&#x6C34;&#x5382;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x80FD;&#xFF0C;&#x6C42;&#x5E72;&#x65F1;&#x533A;&#x4E2D;&#x4E0D;&#x53EF;&#x80FD;&#x5EFA;&#x6709;&#x6C34;&#x5229;&#x8BBE;&#x65BD;&#x7684;&#x57CE;&#x5E02;&#x6570;&#x76EE;&#x3002;</p>
+<h2 id="&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x683C;&#x5F0F;">&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x683C;&#x5F0F;</h2>
+<p>&#x8F93;&#x5165;&#x683C;&#x5F0F;&#xFF1A;</p>
+<p>&#x6BCF;&#x884C;&#x4E24;&#x4E2A;&#x6570;&#xFF0C;&#x4E4B;&#x95F4;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#x3002;&#x8F93;&#x5165;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x4E24;&#x4E2A;&#x6B63;&#x6574;&#x6570; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo separator="true">,</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">N, M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.10903em;">M</span></span></span></span>&#xFF0C;&#x8868;&#x793A;&#x77E9;&#x5F62;&#x7684;&#x89C4;&#x6A21;&#x3002;&#x63A5;&#x4E0B;&#x6765; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> &#x884C;&#xFF0C;&#x6BCF;&#x884C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.10903em;">M</span></span></span></span> &#x4E2A;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x4F9D;&#x6B21;&#x4EE3;&#x8868;&#x6BCF;&#x5EA7;&#x57CE;&#x5E02;&#x7684;&#x6D77;&#x62D4;&#x9AD8;&#x5EA6;&#x3002;</p>
+<p>&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#xFF1A;</p>
+<p>&#x4E24;&#x884C;&#x3002;&#x5982;&#x679C;&#x80FD;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x6574;&#x6570; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x4EE3;&#x8868;&#x6700;&#x5C11;&#x5EFA;&#x9020;&#x51E0;&#x4E2A;&#x84C4;&#x6C34;&#x5382;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x6574;&#x6570; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> &#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x4EE3;&#x8868;&#x6709;&#x51E0;&#x5EA7;&#x5E72;&#x65F1;&#x533A;&#x4E2D;&#x7684;&#x57CE;&#x5E02;&#x4E0D;&#x53EF;&#x80FD;&#x5EFA;&#x6709;&#x6C34;&#x5229;&#x8BBE;&#x65BD;&#x3002;</p>
+<h2 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h2>
+<figure>
+<img src="https://cdn.luogu.org/upload/pic/301.png" alt="&#x6570;&#x636E;&#x8303;&#x56F4;"><figcaption>&#x6570;&#x636E;&#x8303;&#x56F4;</figcaption>
+</figure>
+<h1 id="&#x9898;&#x89E3;">&#x9898;&#x89E3;</h1>
+<p>&#x7ECF;&#x8FC7;&#x89C2;&#x5BDF;&#x601D;&#x8003;&#x53D1;&#x73B0;&#xFF0C;&#x5982;&#x679C;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">m</span></span></span></span> &#x884C;&#x7684;&#x6240;&#x6709;&#x70B9;&#x90FD;&#x80FD;&#x591F;&#x88AB;&#x641C;&#x7D22;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x4ECE;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> &#x884C;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x70B9;&#x51FA;&#x53D1;&#x6240;&#x80FD;&#x641C;&#x7D22;&#x5230;&#x7684;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">m</span></span></span></span> &#x884C;&#x7684;&#x683C;&#x5B50;&#x4E00;&#x5B9A;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF1B;&#x5426;&#x5219;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">m</span></span></span></span> &#x884C;&#x4E00;&#x5B9A;&#x4F1A;&#x6709;&#x683C;&#x5B50;&#x641C;&#x4E0D;&#x5230;&#x3002;&#x901A;&#x8FC7;&#x8BB0;&#x5FC6;&#x5316;&#x641C;&#x7D22;&#xFF0C;&#x641C;&#x7D22;&#x51FA;&#x4ECE;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> &#x884C;&#x7684;&#x6BCF;&#x4E2A;&#x70B9;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x7684;&#x533A;&#x95F4;&#xFF0C;&#x540C;&#x65F6;&#x7EDF;&#x8BA1;&#x641C;&#x5230;&#x7684;&#x7B2C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">m</span></span></span></span> &#x884C;&#x7684;&#x683C;&#x5B50;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x641C;&#x5B8C;&#x4EE5;&#x540E;&#x53D1;&#x73B0;&#x4E0D;&#x5230; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">m</span></span></span></span> &#x4E2A;&#x90A3;&#x4E48;&#x7B2C;&#x4E00;&#x95EE;&#x7684;&#x7B54;&#x6848;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>&#x3002;</p>
+<p>&#x5728;&#x5904;&#x7406;&#x51FA;&#x7B2C;1&#x884C;&#x7684;&#x6BCF;&#x4E2A;&#x683C;&#x5B50;&#x53EF;&#x4EE5;&#x641C;&#x5230;&#x7684;&#x533A;&#x95F4;&#x4E4B;&#x540E;&#xFF0C;&#x95EE;&#x9898;&#x8F6C;&#x5316;&#x6210;&#x201C;&#x7ED9;&#x5B9A;&#x4E00;&#x4E9B;&#x7EBF;&#x6BB5;&#xFF0C;&#x7528;&#x6700;&#x5C11;&#x6570;&#x91CF;&#x7684;&#x7EBF;&#x6BB5;&#x8986;&#x76D6;&#x6574;&#x4E2A;&#x533A;&#x95F4;&#x201D;&#x3002;&#x6211;&#x4EEC;&#x8BB0;&#x5F55;&#x4E0B;&#x5F53;&#x524D;&#x5DF2;&#x7ECF;&#x8986;&#x76D6;&#x5230;&#x7684;&#x533A;&#x95F4;&#x7684;&#x53F3;&#x7AEF;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span>&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x53BB;&#x627E;&#x5DE6;&#x7AEF;&#x70B9;&#x5728; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span> &#x5DE6;&#x4FA7;&#x7684;&#x53F3;&#x7AEF;&#x70B9;&#x6700;&#x9760;&#x53F3;&#x7684;&#x7EBF;&#x6BB5;&#x53BB;&#x8986;&#x76D6;&#xFF0C;&#x7136;&#x540E;&#x66F4;&#x65B0; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span> &#x4E0E;&#x5DF2;&#x9009;&#x62E9;&#x7684;&#x7EBF;&#x6BB5;&#x6570;&#x91CF;&#x3002;&#xFF08;&#x8FD9;&#x6837;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E0A;&#x9650;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>m</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(m^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> &#x7684;&#xFF0C;&#x611F;&#x89C9;&#x4E0A;&#x4F3C;&#x4E4E;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x4F46;&#x662F;&#x4E5F;&#x80FD;&#x8FC7;&#x5C31;&#x7B97;&#x4E86;&#xFF08;&#x3002;</p>
+<h1 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;algorithm&gt;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="pp">#include </span><span class="im">&lt;climits&gt;</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="pp">#include </span><span class="im">&lt;cstdio&gt;</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="pp">#include </span><span class="im">&lt;cstring&gt;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="pp">#include </span><span class="im">&lt;functional&gt;</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="pp">#include </span><span class="im">&lt;numeric&gt;</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="pp">#include </span><span class="im">&lt;queue&gt;</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="at">const</span> <span class="dt">int</span> MAX = <span class="dv">500</span> + <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="at">const</span> <span class="dt">int</span> dx[] = {<span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>}, dy[] = {<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">-1</span>};</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="dt">int</span> n, m, mat[MAX][MAX], lmax[MAX][MAX], rmax[MAX][MAX], ans1, ansm;</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="dt">bool</span> vis[MAX][MAX], vism[MAX];</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="dt">void</span> dfs(<span class="dt">int</span> x, <span class="dt">int</span> y) {</a>
+<a class="sourceLine" id="cb1-17" data-line-number="17">    vis[x][y] = <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb1-18" data-line-number="18">    <span class="cf">if</span> (x == n) {</a>
+<a class="sourceLine" id="cb1-19" data-line-number="19">        vism[y] = <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb1-20" data-line-number="20">    }</a>
+<a class="sourceLine" id="cb1-21" data-line-number="21">    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= <span class="dv">4</span>; ++i) {</a>
+<a class="sourceLine" id="cb1-22" data-line-number="22">        <span class="dt">int</span> xx = x + dx[i], yy = y + dy[i];</a>
+<a class="sourceLine" id="cb1-23" data-line-number="23">        <span class="cf">if</span> (!(<span class="dv">0</span> &lt; xx &amp;&amp; xx &lt;= n) || !(<span class="dv">0</span> &lt; yy &amp;&amp; yy &lt;= m)) {</a>
+<a class="sourceLine" id="cb1-24" data-line-number="24">            <span class="cf">continue</span>;</a>
+<a class="sourceLine" id="cb1-25" data-line-number="25">        }</a>
+<a class="sourceLine" id="cb1-26" data-line-number="26">        <span class="cf">if</span> ((mat[xx][yy] &gt;= mat[x][y])) {</a>
+<a class="sourceLine" id="cb1-27" data-line-number="27">            <span class="cf">continue</span>;</a>
+<a class="sourceLine" id="cb1-28" data-line-number="28">        }</a>
+<a class="sourceLine" id="cb1-29" data-line-number="29">        <span class="cf">if</span> ((!vis[xx][yy])) {</a>
+<a class="sourceLine" id="cb1-30" data-line-number="30">            dfs(xx, yy);</a>
+<a class="sourceLine" id="cb1-31" data-line-number="31">        }</a>
+<a class="sourceLine" id="cb1-32" data-line-number="32">        lmax[x][y] = <span class="bu">std::</span>min(lmax[x][y], lmax[xx][yy]);</a>
+<a class="sourceLine" id="cb1-33" data-line-number="33">        rmax[x][y] = <span class="bu">std::</span>max(rmax[x][y], rmax[xx][yy]);</a>
+<a class="sourceLine" id="cb1-34" data-line-number="34">    }</a>
+<a class="sourceLine" id="cb1-35" data-line-number="35">}</a>
+<a class="sourceLine" id="cb1-36" data-line-number="36"></a>
+<a class="sourceLine" id="cb1-37" data-line-number="37"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb1-38" data-line-number="38">    scanf(<span class="st">&quot;</span><span class="sc">%d</span><span class="st"> </span><span class="sc">%d</span><span class="st">&quot;</span>, &amp;n, &amp;m);</a>
+<a class="sourceLine" id="cb1-39" data-line-number="39">    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= n; ++i) {</a>
+<a class="sourceLine" id="cb1-40" data-line-number="40">        <span class="cf">for</span> (<span class="dt">int</span> j = <span class="dv">1</span>; j &lt;= m; ++j) {</a>
+<a class="sourceLine" id="cb1-41" data-line-number="41">            scanf(<span class="st">&quot;</span><span class="sc">%d</span><span class="st">&quot;</span>, &amp;mat[i][j]);</a>
+<a class="sourceLine" id="cb1-42" data-line-number="42">        }</a>
+<a class="sourceLine" id="cb1-43" data-line-number="43">    }</a>
+<a class="sourceLine" id="cb1-44" data-line-number="44">    memset(lmax, <span class="bn">0x3f</span>, <span class="kw">sizeof</span>(lmax));</a>
+<a class="sourceLine" id="cb1-45" data-line-number="45">    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= m; ++i) {</a>
+<a class="sourceLine" id="cb1-46" data-line-number="46">        lmax[n][i] = i;</a>
+<a class="sourceLine" id="cb1-47" data-line-number="47">        rmax[n][i] = i;</a>
+<a class="sourceLine" id="cb1-48" data-line-number="48">    }</a>
+<a class="sourceLine" id="cb1-49" data-line-number="49">    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= m; ++i) {</a>
+<a class="sourceLine" id="cb1-50" data-line-number="50">        <span class="cf">if</span> (!vis[<span class="dv">1</span>][i]) {</a>
+<a class="sourceLine" id="cb1-51" data-line-number="51">            dfs(<span class="dv">1</span>, i);</a>
+<a class="sourceLine" id="cb1-52" data-line-number="52">        }</a>
+<a class="sourceLine" id="cb1-53" data-line-number="53">    }</a>
+<a class="sourceLine" id="cb1-54" data-line-number="54">    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= m; ++i) {</a>
+<a class="sourceLine" id="cb1-55" data-line-number="55">        ansm += (<span class="dt">bool</span>)vism[i];</a>
+<a class="sourceLine" id="cb1-56" data-line-number="56">    }</a>
+<a class="sourceLine" id="cb1-57" data-line-number="57">    <span class="cf">if</span> (ansm != m) {</a>
+<a class="sourceLine" id="cb1-58" data-line-number="58">        puts(<span class="st">&quot;0&quot;</span>);</a>
+<a class="sourceLine" id="cb1-59" data-line-number="59">        printf(<span class="st">&quot;</span><span class="sc">%d\n</span><span class="st">&quot;</span>, m - ansm);</a>
+<a class="sourceLine" id="cb1-60" data-line-number="60">        <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-61" data-line-number="61">    }</a>
+<a class="sourceLine" id="cb1-62" data-line-number="62">    <span class="dt">int</span> l = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb1-63" data-line-number="63">    <span class="cf">while</span> (l != m + <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb1-64" data-line-number="64">        <span class="dt">int</span> r = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-65" data-line-number="65">        <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">1</span>; i &lt;= m; ++i) {</a>
+<a class="sourceLine" id="cb1-66" data-line-number="66">            <span class="cf">if</span> (lmax[<span class="dv">1</span>][i] &lt;= l) {</a>
+<a class="sourceLine" id="cb1-67" data-line-number="67">                r = <span class="bu">std::</span>max(rmax[<span class="dv">1</span>][i], r);</a>
+<a class="sourceLine" id="cb1-68" data-line-number="68">            }</a>
+<a class="sourceLine" id="cb1-69" data-line-number="69">        }</a>
+<a class="sourceLine" id="cb1-70" data-line-number="70">        ans1++;</a>
+<a class="sourceLine" id="cb1-71" data-line-number="71">        l = r + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb1-72" data-line-number="72">    }</a>
+<a class="sourceLine" id="cb1-73" data-line-number="73">    puts(<span class="st">&quot;1&quot;</span>);</a>
+<a class="sourceLine" id="cb1-74" data-line-number="74">    printf(<span class="st">&quot;</span><span class="sc">%d\n</span><span class="st">&quot;</span>, ans1);</a>
+<a class="sourceLine" id="cb1-75" data-line-number="75">    <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-76" data-line-number="76">}</a></code></pre></div>
+<p>Finita la comedia.</p>
+
+                </div>
+            </div>
+    
+            <nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2018/08/NOIP2011-ChooseHotel/">
+        上一篇<br>[NOIP2011] 选择客栈
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2018/08/NOIP2010-TurtleChess/">
+        下一篇<br>[NOIP2010] 乌龟棋
+    </a>
+    
+</nav>
+
+    
+            
+
+<div class="post-comment-wrapper">
+    <div id="disqus_thread"></div>
+</div>
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2018 <a href="https://blog.masellum.me">Mas&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"
+        integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"
+        integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js"
+        integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
+<script src="/js/journal.js?94553250"></script>
+
+
+<script>
+    var disqus_shortname = 'masellum-blog';
+    var disqus_config = function () {
+        this.page.url = 'https://blog.masellum.me/2018/08/NOIP2010-DivertWaterIntoTheCity/';
+        this.page.identifier = '/2018/08/NOIP2010-DivertWaterIntoTheCity/';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.body || d.head).appendChild(s);
+    })();
+</script>
+
+
+</body>
+</html>

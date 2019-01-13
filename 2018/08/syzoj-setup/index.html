@@ -1,4 +1,208 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Masellum Guo,i@masellum.me"><title>SYZOJ 部署指南 · Mas's Blog</title><meta name="description" content="// 2018/10/30 &amp;#x66F4;&amp;#x65B0;&amp;#xFF1A;&amp;#x53D1;&amp;#x73B0;&amp;#x7ADF;&amp;#x7136;&amp;#x6709;&amp;#x4EBA;&amp;#x770B;&amp;#x8FD9;&amp;#x7BC7;&amp;#x535A;&amp;#x5BA2;&amp;#x2026;&amp;#x2026;&amp;#x4E09;"><meta name="keywords" content="Hexo,OI,Linux,Literature"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script><link href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/copy-tex.min.js" integrity="sha384-C6+I57LTtRxci6ohCckeDBUvozd3Zm2ThSCEQCHq+d2rw+RtSlWxylHmWiFq9Okv" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><h3 title=""><a href="/">Mas's Blog</a></h3><div class="description"><p>Ciao Tomorrow.</p></div></div></div><ul class="social-links"><li><a href="https://twitter.com/masellumguo"><i class="fa fa-twitter"></i></a></li><li><a href="http://weibo.com/Masellum"><i class="fa fa-weibo"></i></a></li><li><a href="http://github.com/Masellum"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div><span>&copy; 2018 Masellum Guo</span></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li><li><a href="/archives/">归档</a></li><li><a href="/links/">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/assets/img/icon-128x128.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>SYZOJ 部署指南</a></h3></div><div class="post-content"><a id="more"></a>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>SYZOJ 部署指南 - Mas&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Masellum Guo">
+<meta name="description" content=" ">
+<meta name="keywords" content="">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?96533134">
+<script src="/js/loadCSS.js"></script>
+<script>
+    loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
+    (function (d) {
+        var config = {
+                kitId: 'dwg1tuc',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h = d.documentElement, t = setTimeout(function () {
+                h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+            }, config.scriptTimeout), tk = d.createElement("script"), f = false,
+            s = d.getElementsByTagName("script")[0], a;
+        h.className += " wf-loading";
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+            a = this.readyState;
+            if (f || a && a != "complete" && a != "loaded") return;
+            f = true;
+            clearTimeout(t);
+            try {
+                Typekit.load(config)
+            } catch (e) {
+            }
+        };
+        s.parentNode.insertBefore(tk, s)
+    })(document);
+</script>
+<noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons"/>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div id="top"></div>
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://blog.masellum.me">
+                首页
+            </a>
+            <a class="a-block drawer-menu-item false" href="/archives">
+                归档
+            </a>
+
+            
+            
+            <a class="a-block drawer-menu-item false" href="/about.html">
+                关于
+            </a>
+            
+            <a class="a-block drawer-menu-item false" href="/links.html">
+                朋友们
+            </a>
+            
+
+            
+            <a class="a-block drawer-menu-item" href="/atom.xml">
+                RSS
+            </a>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Mas&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Mas&#39;s Blog</div>
+        <div class="single-column-header-subtitle">Masellum 的生活日志</div>
+    </a>
+</div>
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Mas's Blog
+        </div>
+        <div class="nav-subtitle">
+            Masellum 的生活日志
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        <a class="a-block no-tint nav-link-item false" href="/archives">
+            归档
+        </a>
+
+        
+        
+        <a class="a-block nav-link-item false" href="/about.html">
+            关于
+        </a>
+        
+        <a class="a-block nav-link-item false" href="/links.html">
+            朋友们
+        </a>
+        
+
+        
+        <a class="a-block no-tint nav-link-item" href="/atom.xml">
+            RSS
+        </a>
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2019 <a href="https://blog.masellum.me">Mas&#39;s Blog</a>
+    </div>
+</div>
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    SYZOJ 部署指南
+                    <div class="post-meta">
+                        <time datetime="2018-08-21T01:56:43.000Z" itemprop="datePublished">
+                            2018-08-21 09:56
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/其他/'>其他</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/Linux/'>Linux</a>, 
+                        
+                        <a href='/tags/SYZOJ/'>SYZOJ</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <a id="more"></a>
 <p>// 2018/10/30 &#x66F4;&#x65B0;&#xFF1A;&#x53D1;&#x73B0;&#x7ADF;&#x7136;&#x6709;&#x4EBA;&#x770B;&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x2026;&#x2026;&#x4E09;&#x6708;&#x4EFD;&#x5199;&#x7684;&#x90E8;&#x7F72;&#x6307;&#x5357;&#x5728;&#x5341;&#x6708;&#x88AB;&#x53D1;&#x73B0;&#x5168;&#x90FD;&#x662F;&#x9519;&#x6F0F;&#x2026;&#x2026;&#xFF08;&#x54ED;&#x6CE3;&#xFF09;&#x4E8E;&#x662F;&#x8FDB;&#x884C;&#x4E86;&#x5C0F;&#x7684;&#x4FEE;&#x8BA2;&#xFF0C;&#x8FD9;&#x6B21;&#x5E94;&#x8BE5;&#xFF08;&#x6682;&#x65F6;&#xFF09;&#x6CA1;&#x6709;&#x5185;&#x5BB9;&#x4E0A;&#x7684;&#x9519;&#x8BEF;&#x4E86;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x8BE1;&#x5F02;&#x7684;&#x610F;&#x5916;&#x56E0;&#x7D20;&#xFF0C;&#x8FD9;&#x6837;&#x90E8;&#x7F72;&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x80FD;&#x8DD1;&#x8D77;&#x6765;&#x7684;&#x3002;</p>
 <p><a href="https://github.com/syzoj/" target="_blank" rel="noopener">SYZOJ</a> &#x662F;&#x4E3B;&#x8981;&#x7531; <a href="https://github.com/Menci" target="_blank" rel="noopener">Menci</a> &#x4E0E; <a href="https://github.com/t123yh" target="_blank" rel="noopener">t123yh</a> &#x5F00;&#x53D1;&#x7684;&#x5728;&#x7EBF;&#x8BC4;&#x6D4B;&#x7CFB;&#x7EDF;&#xFF0C;&#x5177;&#x6709;&#x754C;&#x9762;&#x7F8E;&#x89C2;&#x3001;&#x540E;&#x53F0;&#x7BA1;&#x7406;&#x53EF;&#x89C6;&#x5316;&#x7B49;&#x4F18;&#x70B9;&#xFF0C;&#x4E3A;&#x8BB8;&#x591A;&#x5B66;&#x6821;&#x7528;&#x4E8E;&#x642D;&#x5EFA;&#x6821;&#x5185;OJ&#xFF0C;&#x5E76;&#x88AB; <a href="https://loj.ac/" target="_blank" rel="noopener">Libre OJ</a> &#x4F7F;&#x7528;&#x3002;&#x4F46;&#x7531;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x65F6;&#x95F4;&#x7D27;&#x5F20;&#xFF0C;&#x957F;&#x671F;&#x6CA1;&#x6709;&#x5B8C;&#x5584;&#x5B89;&#x88C5;&#x6587;&#x6863;&#xFF0C;&#x5176; GitHub &#x4E3B;&#x9875;&#x4E0A;&#x7684;&#x5B89;&#x88C5;&#x6307;&#x5357;&#x5DF2;&#x4E25;&#x91CD;&#x8FC7;&#x671F;&#xFF0C;&#x7F51;&#x4E0A;&#x80FD;&#x641C;&#x7D22;&#x5230;&#x7684;&#x5B89;&#x88C5;&#x6307;&#x5357;&#x4E5F;&#x8981;&#x4E48;&#x8FC7;&#x4E8E;&#x8001;&#x65E7;&#x8981;&#x4E48;&#x8FC7;&#x4E8E;&#x7B80;&#x7565;&#x3002;&#x5728;&#x7ECF;&#x5386;&#x8FC7;&#x4E09;&#x5929;&#x75DB;&#x82E6;&#x7684;&#x6478;&#x7D22;&#x540E;&#xFF0C;&#x6211;&#x7EC8;&#x4E8E;&#x6210;&#x529F;&#x5730;&#x90E8;&#x7F72;&#x4E86; SYZOJ&#x3002;&#x4E3A;&#x4E86;&#x8BB0;&#x5F55;&#x81EA;&#x5DF1;&#x7684;&#x90E8;&#x7F72;&#x5386;&#x7A0B;&#x4E5F;&#x4E3A;&#x4E86;&#x4E0D;&#x8BA9;&#x540E;&#x6765;&#x4EBA;&#x91CD;&#x590D;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#xFF0C;&#x6211;&#x51B3;&#x5B9A;&#x4F9D;&#x6211;&#x6D45;&#x89C1;&#x5199;&#x4E00;&#x7BC7; SYZOJ &#x90E8;&#x7F72;&#x6307;&#x5357;&#x3002;</p>
 <p>&#x672C;&#x6587;&#x90E8;&#x7F72;&#x73AF;&#x5883;&#x4E3A; Ubuntu 16.04&#xFF0C;&#x4F7F;&#x7528;&#x7684; Node.js &#x7248;&#x672C;&#x4E3A;v8.9.3&#xFF0C;npm &#x7248;&#x672C;&#x4E3A;5.5.1&#xFF0C;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7248;&#x672C;&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E0D;&#x53EF;&#x89E3;&#x51B3;&#x7684; Bug&#x3002;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5728;&#x90E8;&#x7F72; SYZOJ &#x7684;&#x540C;&#x65F6;&#x4E0D;&#x5F71;&#x54CD;&#x672C;&#x673A;&#x7684; Node.js &#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> &#x7BA1;&#x7406;&#x591A;&#x4E2A; Node.js &#x7248;&#x672C;&#x3002;&#x5173;&#x4E8E; SYZOJ2 &#x5728; CentOS &#x4E0A;&#x7684;&#x642D;&#x5EFA;&#xFF0C;&#x8BF7;&#x53C2;&#x8003; Victor Huang &#x7684; <a href="https://imvictor.tech/posts/deploying-syzoj2-on-centos/" target="_blank" rel="noopener">SYZOJ2 &#x5728; CentOS &#x4E0A;&#x7684;&#x642D;&#x5EFA;</a>&#x3002;</p>
@@ -15,11 +219,16 @@
 <h2 id="&#x90E8;&#x7F72;&#x6B65;&#x9AA4;">&#x90E8;&#x7F72;&#x6B65;&#x9AA4;</h2>
 <h3 id="&#x83B7;&#x53D6;&#x4EE3;&#x7801;">&#x83B7;&#x53D6;&#x4EE3;&#x7801;</h3>
 <p>&#x4ECE; GitHub &#x4E0A;&#x5206;&#x522B;&#x83B7;&#x53D6; web &#x7AEF;&#x548C; judge &#x7AEF;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/syzoj/syzoj.git /var/syzoj-web</span><br><span class="line">git clone https://github.com/syzoj/judge-v3.git /var/syzoj-judge-v3</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>git clone https://github.com/syzoj/syzoj.git /var/syzoj-web
+git clone https://github.com/syzoj/judge-v3.git /var/syzoj-judge-v3</code></pre>
 <p>&#x672C;&#x6587;&#x7684;&#x90E8;&#x7F72;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C06; web &#x7AEF;&#x653E;&#x5728; <code>/var/syzoj-web</code> &#x76EE;&#x5F55;&#xFF0C;judge &#x7AEF;&#x653E;&#x5728; <code>/var/syzoj-judge-v3</code> &#x76EE;&#x5F55;&#x3002;</p>
 <p>&#x4ECE; <a href="https://seafile.t123yh.xyz:2/f/65f061a56f414b3db478/" target="_blank" rel="noopener">&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;</a> &#x4E0B;&#x8F7D; sandbox-rootfs&#xFF0C;&#x4F7F;&#x7528; root &#x6743;&#x9650;&#x89E3;&#x538B;&#x5230;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
 <h3 id="&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x9879;">&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x9879;</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt install build-essential libboost1.58-all-dev nodejs rabbitmq-server redis-server nginx p7zip-full</span><br><span class="line">cd /var/syzoj-web</span><br><span class="line">npm i</span><br><span class="line">cd /var/syzoj-judge-v3</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>apt install build-essential libboost1.58-all-dev nodejs rabbitmq-server redis-server nginx p7zip-full
+cd /var/syzoj-web
+npm i
+cd /var/syzoj-judge-v3
+npm i</code></pre>
 <p>SYZOJ &#x4F7F;&#x7528;&#x7684; simple-sandbox &#x9700;&#x8981;&#x4F7F;&#x7528; boost &#x5E93;&#x3002;</p>
 <p>// &#x5BF9;&#x4E8E; Ubuntu 18.04&#xFF0C;&#x8BF7;&#x5C06;&#x7B2C;&#x4E00;&#x884C;&#x4E2D;&#x7684; <code>libboost1.58-all-dev</code> &#x66FF;&#x6362;&#x4E3A; <code>libboost-all-dev</code>&#x3002;</p>
 <p>SYZOJ &#x4F7F;&#x7528; RabbitMQ &#x6D88;&#x606F;&#x961F;&#x5217;&#x5B9E;&#x73B0;&#x5404;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#xFF0C;&#x4F7F;&#x7528; Redis &#x5B9E;&#x73B0;&#x591A;&#x4E2A; runner &#x5171;&#x4EAB;&#x4E00;&#x4EFD;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x3002;</p>
@@ -27,75 +236,395 @@
 <h3 id="&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5E93;">&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5E93;</h3>
 <p>SYZOJ &#x9ED8;&#x8BA4;&#x4F7F;&#x7528; sqlite3 &#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6539;&#x7528;&#x66F4;&#x5F3A;&#x5927;&#x4E5F;&#x66F4;&#x666E;&#x904D;&#x7684; MySQL&#x3002;MySQL &#x7684;&#x5B89;&#x88C5;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;</p>
 <p>&#x6253;&#x5F00; MySQL cli&#xFF0C;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x6CE8;&#x610F;&#x81EA;&#x884C;&#x5C06;&#x4E2D;&#x62EC;&#x53F7;&#x4E2D;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x4E3A;&#x4F60;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5BB9;&#x3002;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE syzoj;</span><br><span class="line">ALTER DATABASE syzoj CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;</span><br><span class="line">CREATE USER &apos;syzoj&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;[your_password]&apos;;</span><br><span class="line">GRANT ALL ON syzoj.* TO &apos;syzoj&apos;@&apos;localhost&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+<pre class="mysql"><code>CREATE DATABASE syzoj;
+ALTER DATABASE syzoj CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+CREATE USER &apos;syzoj&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;[your_password]&apos;;
+GRANT ALL ON syzoj.* TO &apos;syzoj&apos;@&apos;localhost&apos;;
+FLUSH PRIVILEGES;</code></pre>
 <p>&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x521B;&#x5EFA;&#x4E86;&#x540D;&#x4E3A;<code>syzoj</code>&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;&#x540D;&#x4E3A; <code>syzoj</code> &#x7684;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x5E76;&#x66F4;&#x6539;&#x4E86;&#x6570;&#x636E;&#x5E93;&#x6743;&#x9650;&#x3002;</p>
 <h3 id="&#x542F;&#x7528;&#x5185;&#x5B58;&#x63A7;&#x5236;&#x76F8;&#x5173;&#x7684;&#x5185;&#x6838;&#x9009;&#x9879;">&#x542F;&#x7528;&#x5185;&#x5B58;&#x63A7;&#x5236;&#x76F8;&#x5173;&#x7684;&#x5185;&#x6838;&#x9009;&#x9879;</h3>
 <p>simple-sandbox &#x4F7F;&#x7528;&#x4E86; cgroup &#x6765;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x7528;&#x91CF;&#x63A7;&#x5236;&#xFF0C;&#x8BE5;&#x8FC7;&#x7A0B;&#x9700;&#x8981;&#x7528;&#x5230; memory.memsw&#xFF08;&#x63A7;&#x5236;&#x5185;&#x5B58;&#x548C;&#x4EA4;&#x6362;&#x7A7A;&#x95F4;&#x7684;&#x603B;&#x7528;&#x91CF;&#xFF09;&#x3002;&#x4E00;&#x4E9B; Linux &#x53D1;&#x884C;&#x7248;&#x7684;&#x5185;&#x6838;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6CA1;&#x6709;&#x542F;&#x7528;&#x8FD9;&#x4E2A;&#x5185;&#x6838;&#x9009;&#x9879;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x624B;&#x52A8;&#x542F;&#x7528;&#x5B83;&#x3002;</p>
 <p>&#x68C0;&#x67E5;&#x6587;&#x4EF6; <code>/sys/fs/cgroup/memory/memory.memsw.usage_in_bytes</code> &#x662F;&#x5426;&#x5B58;&#x5728;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4F60;&#x7684; grub &#x542F;&#x7528;&#x3002; &#x6253;&#x5F00; <code>/etc/default/grub</code>&#xFF0C;&#x627E;&#x5230;&#x5176;&#x4E2D;&#x7684;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</code></pre>
 <p>&#x8FD9;&#x4E00;&#x884C;&#xFF08;&#x5F15;&#x53F7;&#x5185;&#x5185;&#x5BB9;&#x53EF;&#x80FD;&#x6709;&#x4E0D;&#x540C;&#xFF09;&#xFF0C;&#x5728;&#x5176;&#x540E;&#x6DFB;&#x52A0; <code>cgroup_enable=memory swapaccount=1</code>&#x3002;&#x4EE5;&#x4E0A;&#x8FF0;&#x4E3A;&#x4F8B;&#xFF0C;&#x6DFB;&#x52A0;&#x540E;&#x8BE5;&#x884C;&#x5E94;&#x4E3A;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash cgroup_enable=memory swapaccount=1&quot;</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash cgroup_enable=memory swapaccount=1&quot;</code></pre>
 <p>&#x4FEE;&#x6539;&#x540E;&#x6267;&#x884C;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-grub &amp;&amp; reboot</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>update-grub &amp;&amp; reboot</code></pre>
 <p>&#x6765;&#x66F4;&#x65B0; grub &#x914D;&#x7F6E;&#x5E76;&#x91CD;&#x542F;&#x3002;&#x91CD;&#x542F;&#x540E;&#xFF0C;&#x91CD;&#x65B0;&#x68C0;&#x67E5;&#x6587;&#x4EF6; <code>/sys/fs/cgroup/memory/memory.memsw.usage_in_bytes</code> &#x662F;&#x5426;&#x5B58;&#x5728;&#x3002;</p>
 <h3 id="&#x6784;&#x5EFA;&#x6E90;&#x4EE3;&#x7801;">&#x6784;&#x5EFA;&#x6E90;&#x4EE3;&#x7801;</h3>
 <p>SYZOJ &#x90E8;&#x5206;&#x4F7F;&#x7528;&#x4E86; TypeScript&#x3002;&#x4F60;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5C06; TypeScript &#x7F16;&#x8BD1;&#x6210; JavaScript&#x3002;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /var/syzoj-judge-v3</span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>cd /var/syzoj-judge-v3
+npm run build</code></pre>
 <h3 id="&#x590D;&#x5236;&#x5E76;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x590D;&#x5236;&#x5E76;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
 <p>SYZOJ &#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x8FD0;&#x884C;&#x6240;&#x7528;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#xFF0C;&#x5EFA;&#x8BAE;&#x5C06;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7EDF;&#x4E00;&#x653E;&#x5728; <code>/etc/syzoj-config</code> &#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
 <p>SYZOJ &#x63D0;&#x4F9B;&#x4E86;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x793A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5C06;&#x793A;&#x4F8B;&#x590D;&#x5236;&#x8FC7;&#x53BB;&#x3002;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir /mnt/syzoj-data /mnt/syzoj-bin /mnt/syzoj-tmp1 /etc/syzoj-congig</span><br><span class="line">cd /var/syzoj-judge-v3</span><br><span class="line">cp daemon-config-example.json /etc/syzoj-config/daemon.json</span><br><span class="line">cp runner-shared-config-example.json /etc/syzoj-config/runner-shared.json</span><br><span class="line">cp runner-instance-config-example.json /etc/syzoj-config/runner-instance1.json</span><br><span class="line">cp frontend-config-example.json /etc/syzoj-config/frontend.json</span><br><span class="line">cp /var/syzoj-web/config-example.json /etc/syzoj-config/web.json</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>mkdir /mnt/syzoj-data /mnt/syzoj-bin /mnt/syzoj-tmp1 /etc/syzoj-congig
+cd /var/syzoj-judge-v3
+cp daemon-config-example.json /etc/syzoj-config/daemon.json
+cp runner-shared-config-example.json /etc/syzoj-config/runner-shared.json
+cp runner-instance-config-example.json /etc/syzoj-config/runner-instance1.json
+cp frontend-config-example.json /etc/syzoj-config/frontend.json
+cp /var/syzoj-web/config-example.json /etc/syzoj-config/web.json</code></pre>
 <p>SYZOJ &#x7684; <code>runner</code> &#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x4F60;&#x9700;&#x8981;&#x6309;&#x7167;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x91CC;&#x7ED9;&#x51FA;&#x4E00;&#x4EFD;&#x793A;&#x4F8B;&#x3002;JSON &#x6807;&#x51C6;&#x4E2D;&#x6CA1;&#x6709;&#x6CE8;&#x91CA;&#xFF0C;&#x6240;&#x4EE5;&#x590D;&#x5236;&#x4E0B;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8BDD;&#x8BF7;&#x5220;&#x9664;&#x6CE8;&#x91CA;&#x3002;</p>
 <p><code>config.json</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  &quot;title&quot;: &quot;SYZOJ&quot;, // OJ&#x540D;&#x79F0;</span><br><span class="line">  &quot;hostname&quot;: &quot;127.0.0.1&quot;, // web &#x7AEF; IP&#xFF08;&#x4E5F;&#x5C31;&#x662F; web &#x670D;&#x52A1;&#x5668;&#x76D1;&#x542C;&#x7684; IP&#xFF09;&#xFF0C;&#x5BF9;&#x5916;&#x5F00;&#x653E;&#x8BF7;&#x4FEE;&#x6539;&#x4E3A;&#x5BF9;&#x5916; IP</span><br><span class="line">  &quot;port&quot;: &quot;5283&quot;, // web &#x7AEF;&#x7AEF;&#x53E3;</span><br><span class="line">  &quot;db&quot;: {</span><br><span class="line">    // &#x5982;&#x679C;&#x4F7F;&#x7528; sqlite3 &#x5219;&#x4E0D;&#x7528;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</span><br><span class="line">    // &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6362;&#x7528;&#x4E86; MySQL &#x6240;&#x4EE5;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x5B9A;&#x4FEE;&#x6539;</span><br><span class="line">    &quot;database&quot;: &quot;syzoj&quot;, // MySQL &#x6570;&#x636E;&#x5E93;&#x540D;</span><br><span class="line">    &quot;username&quot;: &quot;syzoj&quot;, // MySQL &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;</span><br><span class="line">    &quot;password&quot;: &quot;[your_password]&quot;, // MySQL &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x5BC6;&#x7801;</span><br><span class="line">    &quot;host&quot;: &quot;localhost&quot;, // MySQL &#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;</span><br><span class="line">    &quot;dialect&quot;: &quot;mysql&quot;, // &#x6B64;&#x5904;&#x66F4;&#x6539;&#x4E3A; MySQL</span><br><span class="line">    &quot;storage&quot;: null</span><br><span class="line">  },</span><br><span class="line">  &quot;register_mail&quot;: false, // &#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;&#xFF0C;&#x81EA;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x90E8;&#x7F72;&#x65B9;&#x4FBF;&#x8BBE;&#x4E3A; false &#x4EE5;&#x5173;&#x95ED;</span><br><span class="line">  &quot;email&quot;: {</span><br><span class="line">    &quot;method&quot;: &quot;aliyundm&quot;,</span><br><span class="line">    &quot;options&quot;: {</span><br><span class="line">      &quot;AccessKeyId&quot;: &quot;xxxx&quot;,</span><br><span class="line">      &quot;AccessKeySecret&quot;: &quot;xxxx&quot;,</span><br><span class="line">      &quot;AccountName&quot;: &quot;xxxx&quot;</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  &quot;upload_dir&quot;: &quot;uploads&quot;, // &#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span><br><span class="line">  &quot;default&quot;: { // &#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</span><br><span class="line">    &quot;problem&quot;: { // &#x9898;&#x76EE;&#x65F6;&#x95F4;&#x9650;&#x5236;&#x4E0E;&#x7A7A;&#x95F4;&#x9650;&#x5236;</span><br><span class="line">      &quot;time_limit&quot;: 1000,</span><br><span class="line">      &quot;memory_limit&quot;: 256</span><br><span class="line">    },</span><br><span class="line">    &quot;user&quot;: { // &#x7528;&#x6237;&#x9ED8;&#x8BA4;&#x5C55;&#x793A;&#xFF0C;&#x521D;&#x59CB; rating &#x4E3A;1500</span><br><span class="line">      &quot;show&quot;: true,</span><br><span class="line">      &quot;rating&quot;: 1500</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  &quot;sorting&quot;: { // &#x6392;&#x5E8F;&#x65B9;&#x6CD5;</span><br><span class="line">    &quot;ranklist&quot;: { // &#x6392;&#x540D;&#x9ED8;&#x8BA4;&#x4E3A;&#x6309; rating &#x964D;&#x5E8F;&#x6392;&#x5E8F;</span><br><span class="line">      &quot;field&quot;: &quot;rating&quot;, // &#x66F4;&#x6539;&#x4E3A; &quot;ac_num&quot; &#x4EE5;&#x6309; AC &#x6570;&#x6392;&#x5E8F;</span><br><span class="line">      &quot;order&quot;: &quot;desc&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;problem&quot;: { // &#x9898;&#x76EE;&#x9ED8;&#x8BA4;&#x4EE5;&#x9898;&#x76EE;&#x7F16;&#x53F7;&#x6392;&#x5E8F;</span><br><span class="line">      &quot;field&quot;: &quot;id&quot;,</span><br><span class="line">      &quot;order&quot;: &quot;asc&quot;</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  &quot;limit&quot;: { // &#x6700;&#x5927;&#x9650;&#x5236;</span><br><span class="line">    &quot;time_limit&quot;: 10000,</span><br><span class="line">    &quot;memory_limit&quot;: 1024,</span><br><span class="line">    &quot;data_size&quot;: 209715200,</span><br><span class="line">    &quot;testdata&quot;: 209715200,</span><br><span class="line">    &quot;submit_code&quot;: 102400,</span><br><span class="line">    &quot;submit_answer&quot;: 10485760,</span><br><span class="line">    &quot;custom_test_input&quot;: 20971520,</span><br><span class="line">    &quot;testdata_filecount&quot;: 5</span><br><span class="line">  },</span><br><span class="line">  &quot;page&quot;: { // &#x5404;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#x6570;&#x91CF;&#x9650;&#x5236;</span><br><span class="line">    &quot;problem&quot;: 50,</span><br><span class="line">    &quot;problem_statistics&quot;: 10,</span><br><span class="line">    &quot;judge_state&quot;: 10,</span><br><span class="line">    &quot;ranklist&quot;: 20,</span><br><span class="line">    &quot;discussion&quot;: 10,</span><br><span class="line">    &quot;article_comment&quot;: 10,</span><br><span class="line">    &quot;contest&quot;: 10,</span><br><span class="line">    &quot;edit_contest_problem_list&quot;: 10,</span><br><span class="line">    &quot;edit_problem_tag_list&quot;: 10</span><br><span class="line">  },</span><br><span class="line">  &quot;languages&quot;: { // &#x8BED;&#x8A00;&#x914D;&#x7F6E;</span><br><span class="line">    &quot;cpp&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;C++&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;cpp&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;GCC 5.4.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;c_cpp&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;cpp11&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;C++11&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;cpp&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;GCC 5.4.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;c_cpp&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;csharp&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;C#&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;csharp&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;MCS 4.8.0.0, Mono 4.8.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;csharp&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;c&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;C&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;c&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;GCC 5.4.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;c_cpp&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;vala&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Vala&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;vala&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;Vala 0.30.1, GCC 5.4.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;vala&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;java&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Java&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;java&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;GCC 5.4.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;java&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;pascal&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Pascal&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;pascal&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;FPC 3.0.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;pascal&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;lua&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Lua&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;lua&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;Lua 5.2.4&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;lua&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;luajit&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;LuaJIT&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;lua&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;LuaJIT 2.0.4&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;lua&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;python2&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Python 2&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;python&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;CPython 2.7.12&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;python&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;python3&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Python 3&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;python&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;CPython 3.5.2&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;python&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;nodejs&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Node.js&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;js&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;7.7.3&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;javascript&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;ruby&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Ruby&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;ruby&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;2.3.1&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;ruby&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;haskell&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Haskell&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;haskell&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;GHC 7.10.3&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;haskell&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;ocaml&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;OCaml&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;ocaml&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;Ocamlbuild 4.02.3&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;ocaml&quot;</span><br><span class="line">    },</span><br><span class="line">    &quot;vbnet&quot;: {</span><br><span class="line">      &quot;show&quot;: &quot;Visual Basic&quot;,</span><br><span class="line">      &quot;highlight&quot;: &quot;vbnet&quot;,</span><br><span class="line">      &quot;version&quot;: &quot;VBNC 0.0.0.5943, Mono 4.8.0&quot;,</span><br><span class="line">      &quot;editor&quot;: &quot;vbscript&quot;</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  &quot;links&quot;: [ // &#x53CB;&#x94FE;</span><br><span class="line">    {</span><br><span class="line">      <span class="attr">&quot;title&quot;</span>: <span class="string">&quot;LibreOJ&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;https://loj.ac/&quot;</span></span><br><span class="line">    }</span><br><span class="line">  ],</span><br><span class="line">  &quot;session_secret&quot;: &quot;233&quot;, // &#x52A0;&#x5BC6; Token&#xFF0C;&#x81EA;&#x884C;&#x66F4;&#x6539;&#xFF0C;&#x5EFA;&#x8BAE;&#x590D;&#x6742;&#x4E00;&#x4E9B;</span><br><span class="line">  &quot;judge_server_addr&quot;: &quot;http://127.0.0.1:5284&quot;, // judge &#x7AEF;&#x7684;&#x5730;&#x5740;^</span><br><span class="line">  &quot;judge_token&quot;: &quot;233&quot;, // &#x82E5;&#x8981;&#x4FEE;&#x6539;&#x6B64;&#x9879;&#x8BF7;&#x5C06; judge &#x7AEF;&#x7684; web_token &#x4E00;&#x540C;&#x4FEE;&#x6539;</span><br><span class="line">  &quot;email_jwt_secret&quot;: &quot;test&quot; // &#x5E94;&#x8BE5;&#x662F;&#x90AE;&#x4EF6;&#x76F8;&#x5173;&#x8BBE;&#x7F6E;</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;SYZOJ&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">OJ&#x540D;&#x79F0;</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">  <span class="dt">&quot;hostname&quot;</span><span class="fu">:</span> <span class="st">&quot;127.0.0.1&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">web</span> <span class="er">&#x7AEF;</span> <span class="er">IP&#xFF08;&#x4E5F;&#x5C31;&#x662F;</span> <span class="er">web</span> <span class="er">&#x670D;&#x52A1;&#x5668;&#x76D1;&#x542C;&#x7684;</span> <span class="er">IP&#xFF09;&#xFF0C;&#x5BF9;&#x5916;&#x5F00;&#x653E;&#x8BF7;&#x4FEE;&#x6539;&#x4E3A;&#x5BF9;&#x5916;</span> <span class="er">IP</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">  <span class="dt">&quot;port&quot;</span><span class="fu">:</span> <span class="st">&quot;5283&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">web</span> <span class="er">&#x7AEF;&#x7AEF;&#x53E3;</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">  <span class="dt">&quot;db&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">    <span class="er">//</span> <span class="er">&#x5982;&#x679C;&#x4F7F;&#x7528;</span> <span class="er">sqlite3</span> <span class="er">&#x5219;&#x4E0D;&#x7528;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">    <span class="er">//</span> <span class="er">&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6362;&#x7528;&#x4E86;</span> <span class="er">MySQL</span> <span class="er">&#x6240;&#x4EE5;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x5B9A;&#x4FEE;&#x6539;</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">    <span class="dt">&quot;database&quot;</span><span class="fu">:</span> <span class="st">&quot;syzoj&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">MySQL</span> <span class="er">&#x6570;&#x636E;&#x5E93;&#x540D;</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">    <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;syzoj&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">MySQL</span> <span class="er">&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10">    <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;[your_password]&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">MySQL</span> <span class="er">&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x5BC6;&#x7801;</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">    <span class="dt">&quot;host&quot;</span><span class="fu">:</span> <span class="st">&quot;localhost&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">MySQL</span> <span class="er">&#x6570;&#x636E;&#x5E93;&#x5730;&#x5740;</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">    <span class="dt">&quot;dialect&quot;</span><span class="fu">:</span> <span class="st">&quot;mysql&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x6B64;&#x5904;&#x66F4;&#x6539;&#x4E3A;</span> <span class="er">MySQL</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13">    <span class="dt">&quot;storage&quot;</span><span class="fu">:</span> <span class="kw">null</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15">  <span class="dt">&quot;register_mail&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x90AE;&#x7BB1;&#x9A8C;&#x8BC1;&#xFF0C;&#x81EA;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x90E8;&#x7F72;&#x65B9;&#x4FBF;&#x8BBE;&#x4E3A;</span> <span class="er">false</span> <span class="er">&#x4EE5;&#x5173;&#x95ED;</span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">  <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17">    <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;aliyundm&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19">      <span class="dt">&quot;AccessKeyId&quot;</span><span class="fu">:</span> <span class="st">&quot;xxxx&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20">      <span class="dt">&quot;AccessKeySecret&quot;</span><span class="fu">:</span> <span class="st">&quot;xxxx&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21">      <span class="dt">&quot;AccountName&quot;</span><span class="fu">:</span> <span class="st">&quot;xxxx&quot;</span></a>
+<a class="sourceLine" id="cb9-22" data-line-number="22">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb9-23" data-line-number="23">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-24" data-line-number="24">  <span class="dt">&quot;upload_dir&quot;</span><span class="fu">:</span> <span class="st">&quot;uploads&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span></a>
+<a class="sourceLine" id="cb9-25" data-line-number="25">  <span class="dt">&quot;default&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</span></a>
+<a class="sourceLine" id="cb9-26" data-line-number="26">    <span class="dt">&quot;problem&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x9898;&#x76EE;&#x65F6;&#x95F4;&#x9650;&#x5236;&#x4E0E;&#x7A7A;&#x95F4;&#x9650;&#x5236;</span></a>
+<a class="sourceLine" id="cb9-27" data-line-number="27">      <span class="dt">&quot;time_limit&quot;</span><span class="fu">:</span> <span class="dv">1000</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-28" data-line-number="28">      <span class="dt">&quot;memory_limit&quot;</span><span class="fu">:</span> <span class="dv">256</span></a>
+<a class="sourceLine" id="cb9-29" data-line-number="29">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-30" data-line-number="30">    <span class="dt">&quot;user&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x7528;&#x6237;&#x9ED8;&#x8BA4;&#x5C55;&#x793A;&#xFF0C;&#x521D;&#x59CB;</span> <span class="er">rating</span> <span class="er">&#x4E3A;1500</span></a>
+<a class="sourceLine" id="cb9-31" data-line-number="31">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-32" data-line-number="32">      <span class="dt">&quot;rating&quot;</span><span class="fu">:</span> <span class="dv">1500</span></a>
+<a class="sourceLine" id="cb9-33" data-line-number="33">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb9-34" data-line-number="34">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-35" data-line-number="35">  <span class="dt">&quot;sorting&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x6392;&#x5E8F;&#x65B9;&#x6CD5;</span></a>
+<a class="sourceLine" id="cb9-36" data-line-number="36">    <span class="dt">&quot;ranklist&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x6392;&#x540D;&#x9ED8;&#x8BA4;&#x4E3A;&#x6309;</span> <span class="er">rating</span> <span class="er">&#x964D;&#x5E8F;&#x6392;&#x5E8F;</span></a>
+<a class="sourceLine" id="cb9-37" data-line-number="37">      <span class="dt">&quot;field&quot;</span><span class="fu">:</span> <span class="st">&quot;rating&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x66F4;&#x6539;&#x4E3A;</span> <span class="dt">&quot;ac_num&quot;</span> <span class="er">&#x4EE5;&#x6309;</span> <span class="er">AC</span> <span class="er">&#x6570;&#x6392;&#x5E8F;</span></a>
+<a class="sourceLine" id="cb9-38" data-line-number="38">      <span class="dt">&quot;order&quot;</span><span class="fu">:</span> <span class="st">&quot;desc&quot;</span></a>
+<a class="sourceLine" id="cb9-39" data-line-number="39">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-40" data-line-number="40">    <span class="dt">&quot;problem&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x9898;&#x76EE;&#x9ED8;&#x8BA4;&#x4EE5;&#x9898;&#x76EE;&#x7F16;&#x53F7;&#x6392;&#x5E8F;</span></a>
+<a class="sourceLine" id="cb9-41" data-line-number="41">      <span class="dt">&quot;field&quot;</span><span class="fu">:</span> <span class="st">&quot;id&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-42" data-line-number="42">      <span class="dt">&quot;order&quot;</span><span class="fu">:</span> <span class="st">&quot;asc&quot;</span></a>
+<a class="sourceLine" id="cb9-43" data-line-number="43">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb9-44" data-line-number="44">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-45" data-line-number="45">  <span class="dt">&quot;limit&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x6700;&#x5927;&#x9650;&#x5236;</span></a>
+<a class="sourceLine" id="cb9-46" data-line-number="46">    <span class="dt">&quot;time_limit&quot;</span><span class="fu">:</span> <span class="dv">10000</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-47" data-line-number="47">    <span class="dt">&quot;memory_limit&quot;</span><span class="fu">:</span> <span class="dv">1024</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-48" data-line-number="48">    <span class="dt">&quot;data_size&quot;</span><span class="fu">:</span> <span class="dv">209715200</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-49" data-line-number="49">    <span class="dt">&quot;testdata&quot;</span><span class="fu">:</span> <span class="dv">209715200</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-50" data-line-number="50">    <span class="dt">&quot;submit_code&quot;</span><span class="fu">:</span> <span class="dv">102400</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-51" data-line-number="51">    <span class="dt">&quot;submit_answer&quot;</span><span class="fu">:</span> <span class="dv">10485760</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-52" data-line-number="52">    <span class="dt">&quot;custom_test_input&quot;</span><span class="fu">:</span> <span class="dv">20971520</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-53" data-line-number="53">    <span class="dt">&quot;testdata_filecount&quot;</span><span class="fu">:</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb9-54" data-line-number="54">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-55" data-line-number="55">  <span class="dt">&quot;page&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x5404;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x663E;&#x793A;&#x6570;&#x91CF;&#x9650;&#x5236;</span></a>
+<a class="sourceLine" id="cb9-56" data-line-number="56">    <span class="dt">&quot;problem&quot;</span><span class="fu">:</span> <span class="dv">50</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-57" data-line-number="57">    <span class="dt">&quot;problem_statistics&quot;</span><span class="fu">:</span> <span class="dv">10</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-58" data-line-number="58">    <span class="dt">&quot;judge_state&quot;</span><span class="fu">:</span> <span class="dv">10</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-59" data-line-number="59">    <span class="dt">&quot;ranklist&quot;</span><span class="fu">:</span> <span class="dv">20</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-60" data-line-number="60">    <span class="dt">&quot;discussion&quot;</span><span class="fu">:</span> <span class="dv">10</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-61" data-line-number="61">    <span class="dt">&quot;article_comment&quot;</span><span class="fu">:</span> <span class="dv">10</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-62" data-line-number="62">    <span class="dt">&quot;contest&quot;</span><span class="fu">:</span> <span class="dv">10</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-63" data-line-number="63">    <span class="dt">&quot;edit_contest_problem_list&quot;</span><span class="fu">:</span> <span class="dv">10</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-64" data-line-number="64">    <span class="dt">&quot;edit_problem_tag_list&quot;</span><span class="fu">:</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb9-65" data-line-number="65">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-66" data-line-number="66">  <span class="dt">&quot;languages&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="er">//</span> <span class="er">&#x8BED;&#x8A00;&#x914D;&#x7F6E;</span></a>
+<a class="sourceLine" id="cb9-67" data-line-number="67">    <span class="dt">&quot;cpp&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-68" data-line-number="68">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;C++&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-69" data-line-number="69">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;cpp&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-70" data-line-number="70">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;GCC 5.4.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-71" data-line-number="71">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;c_cpp&quot;</span></a>
+<a class="sourceLine" id="cb9-72" data-line-number="72">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-73" data-line-number="73">    <span class="dt">&quot;cpp11&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-74" data-line-number="74">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;C++11&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-75" data-line-number="75">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;cpp&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-76" data-line-number="76">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;GCC 5.4.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-77" data-line-number="77">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;c_cpp&quot;</span></a>
+<a class="sourceLine" id="cb9-78" data-line-number="78">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-79" data-line-number="79">    <span class="dt">&quot;csharp&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-80" data-line-number="80">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;C#&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-81" data-line-number="81">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;csharp&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-82" data-line-number="82">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;MCS 4.8.0.0, Mono 4.8.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-83" data-line-number="83">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;csharp&quot;</span></a>
+<a class="sourceLine" id="cb9-84" data-line-number="84">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-85" data-line-number="85">    <span class="dt">&quot;c&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-86" data-line-number="86">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;C&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-87" data-line-number="87">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;c&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-88" data-line-number="88">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;GCC 5.4.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-89" data-line-number="89">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;c_cpp&quot;</span></a>
+<a class="sourceLine" id="cb9-90" data-line-number="90">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-91" data-line-number="91">    <span class="dt">&quot;vala&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-92" data-line-number="92">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Vala&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-93" data-line-number="93">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;vala&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-94" data-line-number="94">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;Vala 0.30.1, GCC 5.4.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-95" data-line-number="95">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;vala&quot;</span></a>
+<a class="sourceLine" id="cb9-96" data-line-number="96">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-97" data-line-number="97">    <span class="dt">&quot;java&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-98" data-line-number="98">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Java&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-99" data-line-number="99">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;java&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-100" data-line-number="100">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;GCC 5.4.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-101" data-line-number="101">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;java&quot;</span></a>
+<a class="sourceLine" id="cb9-102" data-line-number="102">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-103" data-line-number="103">    <span class="dt">&quot;pascal&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-104" data-line-number="104">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Pascal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-105" data-line-number="105">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;pascal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-106" data-line-number="106">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;FPC 3.0.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-107" data-line-number="107">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;pascal&quot;</span></a>
+<a class="sourceLine" id="cb9-108" data-line-number="108">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-109" data-line-number="109">    <span class="dt">&quot;lua&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-110" data-line-number="110">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Lua&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-111" data-line-number="111">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;lua&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-112" data-line-number="112">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;Lua 5.2.4&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-113" data-line-number="113">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;lua&quot;</span></a>
+<a class="sourceLine" id="cb9-114" data-line-number="114">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-115" data-line-number="115">    <span class="dt">&quot;luajit&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-116" data-line-number="116">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;LuaJIT&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-117" data-line-number="117">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;lua&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-118" data-line-number="118">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;LuaJIT 2.0.4&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-119" data-line-number="119">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;lua&quot;</span></a>
+<a class="sourceLine" id="cb9-120" data-line-number="120">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-121" data-line-number="121">    <span class="dt">&quot;python2&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-122" data-line-number="122">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Python 2&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-123" data-line-number="123">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;python&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-124" data-line-number="124">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;CPython 2.7.12&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-125" data-line-number="125">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;python&quot;</span></a>
+<a class="sourceLine" id="cb9-126" data-line-number="126">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-127" data-line-number="127">    <span class="dt">&quot;python3&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-128" data-line-number="128">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Python 3&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-129" data-line-number="129">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;python&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-130" data-line-number="130">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;CPython 3.5.2&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-131" data-line-number="131">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;python&quot;</span></a>
+<a class="sourceLine" id="cb9-132" data-line-number="132">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-133" data-line-number="133">    <span class="dt">&quot;nodejs&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-134" data-line-number="134">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Node.js&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-135" data-line-number="135">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;js&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-136" data-line-number="136">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;7.7.3&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-137" data-line-number="137">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;javascript&quot;</span></a>
+<a class="sourceLine" id="cb9-138" data-line-number="138">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-139" data-line-number="139">    <span class="dt">&quot;ruby&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-140" data-line-number="140">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Ruby&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-141" data-line-number="141">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;ruby&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-142" data-line-number="142">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;2.3.1&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-143" data-line-number="143">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;ruby&quot;</span></a>
+<a class="sourceLine" id="cb9-144" data-line-number="144">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-145" data-line-number="145">    <span class="dt">&quot;haskell&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-146" data-line-number="146">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Haskell&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-147" data-line-number="147">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;haskell&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-148" data-line-number="148">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;GHC 7.10.3&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-149" data-line-number="149">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;haskell&quot;</span></a>
+<a class="sourceLine" id="cb9-150" data-line-number="150">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-151" data-line-number="151">    <span class="dt">&quot;ocaml&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-152" data-line-number="152">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;OCaml&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-153" data-line-number="153">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;ocaml&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-154" data-line-number="154">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;Ocamlbuild 4.02.3&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-155" data-line-number="155">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;ocaml&quot;</span></a>
+<a class="sourceLine" id="cb9-156" data-line-number="156">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-157" data-line-number="157">    <span class="dt">&quot;vbnet&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-158" data-line-number="158">      <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;Visual Basic&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-159" data-line-number="159">      <span class="dt">&quot;highlight&quot;</span><span class="fu">:</span> <span class="st">&quot;vbnet&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-160" data-line-number="160">      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;VBNC 0.0.0.5943, Mono 4.8.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-161" data-line-number="161">      <span class="dt">&quot;editor&quot;</span><span class="fu">:</span> <span class="st">&quot;vbscript&quot;</span></a>
+<a class="sourceLine" id="cb9-162" data-line-number="162">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb9-163" data-line-number="163">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb9-164" data-line-number="164">  <span class="dt">&quot;links&quot;</span><span class="fu">:</span> <span class="ot">[</span> <span class="er">//</span> <span class="er">&#x53CB;&#x94FE;</span></a>
+<a class="sourceLine" id="cb9-165" data-line-number="165">    <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-166" data-line-number="166">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;LibreOJ&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-167" data-line-number="167">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://loj.ac/&quot;</span></a>
+<a class="sourceLine" id="cb9-168" data-line-number="168">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb9-169" data-line-number="169">  <span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-170" data-line-number="170">  <span class="dt">&quot;session_secret&quot;</span><span class="fu">:</span> <span class="st">&quot;233&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x52A0;&#x5BC6;</span> <span class="er">Token&#xFF0C;&#x81EA;&#x884C;&#x66F4;&#x6539;&#xFF0C;&#x5EFA;&#x8BAE;&#x590D;&#x6742;&#x4E00;&#x4E9B;</span></a>
+<a class="sourceLine" id="cb9-171" data-line-number="171">  <span class="dt">&quot;judge_server_addr&quot;</span><span class="fu">:</span> <span class="st">&quot;http://127.0.0.1:5284&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">judge</span> <span class="er">&#x7AEF;&#x7684;&#x5730;&#x5740;^</span></a>
+<a class="sourceLine" id="cb9-172" data-line-number="172">  <span class="dt">&quot;judge_token&quot;</span><span class="fu">:</span> <span class="st">&quot;233&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x82E5;&#x8981;&#x4FEE;&#x6539;&#x6B64;&#x9879;&#x8BF7;&#x5C06;</span> <span class="er">judge</span> <span class="er">&#x7AEF;&#x7684;</span> <span class="er">web_token</span> <span class="er">&#x4E00;&#x540C;&#x4FEE;&#x6539;</span></a>
+<a class="sourceLine" id="cb9-173" data-line-number="173">  <span class="dt">&quot;email_jwt_secret&quot;</span><span class="fu">:</span> <span class="st">&quot;test&quot;</span> <span class="er">//</span> <span class="er">&#x5E94;&#x8BE5;&#x662F;&#x90AE;&#x4EF6;&#x76F8;&#x5173;&#x8BBE;&#x7F6E;</span></a></code></pre></div>
 <p><em>^&#x5982;&#x679C;&#x60F3;&#x8981;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x5B9E;&#x65F6;&#x83B7;&#x53D6;&#x8BC4;&#x6D4B;&#x72B6;&#x6001;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8BF7;&#x5C06; <code>&quot;judge_server_addr&quot;</code> &#x5B57;&#x6BB5;&#x6539;&#x4E3A; OJ &#x7684;&#x5BF9;&#x5916;&#x5730;&#x5740;&#x3002;&#x53C2;&#x8003;&#x6587;&#x9996;&#x63D0;&#x5230;&#x7684;<a href="https://imvictor.tech/posts/deploying-syzoj2-on-centos/" target="_blank" rel="noopener">SYZOJ2 &#x5728; CentOS &#x4E0A;&#x7684;&#x642D;&#x5EFA;</a>&#x3002;</em></p>
 <p><code>daemon.json</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  &quot;RabbitMQUrl&quot;: &quot;amqp://localhost/&quot;, // RabbitMQ &#x670D;&#x52A1;&#x5668;&#x7684;&#x8DEF;&#x5F84;</span><br><span class="line">  &quot;RedisUrl&quot;: &quot;redis://127.0.0.1:6379&quot;, // Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x8DEF;&#x5F84;</span><br><span class="line">  &quot;TestData&quot;: &quot;/mnt/syzoj-data/uploads/testdata&quot;, // &#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x5B58;&#x653E;&#x76EE;&#x5F55;</span><br><span class="line">  &quot;Priority&quot;: 1,</span><br><span class="line">  &quot;DataDisplayLimit&quot;: 100, // &#x6570;&#x636E;&#x663E;&#x793A;&#x9650;&#x5236;</span><br><span class="line">  &quot;TempDirectory&quot;: &quot;/tmp&quot;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb10"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">&quot;RabbitMQUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;amqp://localhost/&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">RabbitMQ</span> <span class="er">&#x670D;&#x52A1;&#x5668;&#x7684;&#x8DEF;&#x5F84;</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">&quot;RedisUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;redis://127.0.0.1:6379&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">Redis</span> <span class="er">&#x670D;&#x52A1;&#x5668;&#x7684;&#x8DEF;&#x5F84;</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="dt">&quot;TestData&quot;</span><span class="fu">:</span> <span class="st">&quot;/mnt/syzoj-data/uploads/testdata&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x5B58;&#x653E;&#x76EE;&#x5F55;</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="dt">&quot;Priority&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">  <span class="dt">&quot;DataDisplayLimit&quot;</span><span class="fu">:</span> <span class="dv">100</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x6570;&#x636E;&#x663E;&#x793A;&#x9650;&#x5236;</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">  <span class="dt">&quot;TempDirectory&quot;</span><span class="fu">:</span> <span class="st">&quot;/tmp&quot;</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="fu">}</span></a></code></pre></div>
 <p><code>frontend.json</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  &quot;RabbitMQUrl&quot;: &quot;amqp://localhost/&quot;, // RabbitMQ &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</span><br><span class="line">  &quot;Listen&quot;: {</span><br><span class="line">    &quot;host&quot;: &quot;127.0.0.1&quot;, &quot;port&quot;: 5284</span><br><span class="line">  }, // judge &#x7AEF;&#x7684;&#x5730;&#x5740;&#x4E0E;&#x7AEF;&#x53E3;</span><br><span class="line">  &quot;RemoteUrl&quot;: &quot;http://127.0.0.1:5283&quot;, // web &#x7AEF;&#x7684;&#x5730;&#x5740;</span><br><span class="line">  &quot;Token&quot;: &quot;233&quot; // &#x4E0E; web.json &#x4E2D;&#x7684; web_token &#x76F8;&#x540C;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb11"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="dt">&quot;RabbitMQUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;amqp://localhost/&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">RabbitMQ</span> <span class="er">&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="dt">&quot;Listen&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">    <span class="dt">&quot;host&quot;</span><span class="fu">:</span> <span class="st">&quot;127.0.0.1&quot;</span><span class="fu">,</span> <span class="dt">&quot;port&quot;</span><span class="fu">:</span> <span class="dv">5284</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">  <span class="fu">},</span> <span class="er">//</span> <span class="er">judge</span> <span class="er">&#x7AEF;&#x7684;&#x5730;&#x5740;&#x4E0E;&#x7AEF;&#x53E3;</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6">  <span class="dt">&quot;RemoteUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;http://127.0.0.1:5283&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">web</span> <span class="er">&#x7AEF;&#x7684;&#x5730;&#x5740;</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7">  <span class="dt">&quot;Token&quot;</span><span class="fu">:</span> <span class="st">&quot;233&quot;</span> <span class="er">//</span> <span class="er">&#x4E0E;</span> <span class="er">web.json</span> <span class="er">&#x4E2D;&#x7684;</span> <span class="er">web_token</span> <span class="er">&#x76F8;&#x540C;</span></a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="fu">}</span></a></code></pre></div>
 <p><code>runner-shared.json</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">&quot;RabbitMQUrl&quot;</span>: <span class="string">&quot;amqp://localhost/&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;RedisUrl&quot;</span>: <span class="string">&quot;redis://127.0.0.1:6379&quot;</span>,</span><br><span class="line">  &quot;TestData&quot;: &quot;/mnt/syzoj-data/uploads/testdata&quot;, // &#x4E0E; daemon.json &#x4E2D;&#x7684; TestData &#x76F8;&#x540C;</span><br><span class="line">  &quot;Priority&quot;: 1,</span><br><span class="line">  &quot;DebugMessageDisplayLimit&quot;: 5000,</span><br><span class="line">  &quot;OutputLimit&quot;: 104857600,</span><br><span class="line">  &quot;StderrDisplayLimit&quot;: 5120,</span><br><span class="line">  &quot;DataDisplayLimit&quot;: 128,</span><br><span class="line">  &quot;CompilerMessageLimit&quot;: 50000,</span><br><span class="line">  &quot;SpjTimeLimit&quot;: 1501,</span><br><span class="line">  &quot;SpjMemoryLimit&quot;: 256, // &#x4EE5;&#x4E0A;&#x51E0;&#x884C;&#x4E3A;&#x8BC4;&#x6D4B;&#x4FE1;&#x606F;&#x663E;&#x793A;&#x9650;&#x5236;</span><br><span class="line">  &quot;SandboxEnvironments&quot;: [ // sandbox &#x5185;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;</span><br><span class="line">    &quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;,</span><br><span class="line">    <span class="string">&quot;HOME=/tmp&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  &quot;SandboxUser&quot;: &quot;nobody&quot;,</span><br><span class="line">  &quot;SandboxRoot&quot;: &quot;/sandbox-rootfs&quot;, // sandbox &#x6240;&#x5728;&#x76EE;&#x5F55;</span><br><span class="line">  &quot;BinaryDirectory&quot;: &quot;/mnt/syzoj-bin&quot; // runner &#x6240;&#x8981;&#x6267;&#x884C;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb12"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">  <span class="dt">&quot;RabbitMQUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;amqp://localhost/&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">  <span class="dt">&quot;RedisUrl&quot;</span><span class="fu">:</span> <span class="st">&quot;redis://127.0.0.1:6379&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">  <span class="dt">&quot;TestData&quot;</span><span class="fu">:</span> <span class="st">&quot;/mnt/syzoj-data/uploads/testdata&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x4E0E;</span> <span class="er">daemon.json</span> <span class="er">&#x4E2D;&#x7684;</span> <span class="er">TestData</span> <span class="er">&#x76F8;&#x540C;</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">  <span class="dt">&quot;Priority&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">  <span class="dt">&quot;DebugMessageDisplayLimit&quot;</span><span class="fu">:</span> <span class="dv">5000</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">  <span class="dt">&quot;OutputLimit&quot;</span><span class="fu">:</span> <span class="dv">104857600</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">  <span class="dt">&quot;StderrDisplayLimit&quot;</span><span class="fu">:</span> <span class="dv">5120</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9">  <span class="dt">&quot;DataDisplayLimit&quot;</span><span class="fu">:</span> <span class="dv">128</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10">  <span class="dt">&quot;CompilerMessageLimit&quot;</span><span class="fu">:</span> <span class="dv">50000</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">  <span class="dt">&quot;SpjTimeLimit&quot;</span><span class="fu">:</span> <span class="dv">1501</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">  <span class="dt">&quot;SpjMemoryLimit&quot;</span><span class="fu">:</span> <span class="dv">256</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x4EE5;&#x4E0A;&#x51E0;&#x884C;&#x4E3A;&#x8BC4;&#x6D4B;&#x4FE1;&#x606F;&#x663E;&#x793A;&#x9650;&#x5236;</span></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">  <span class="dt">&quot;SandboxEnvironments&quot;</span><span class="fu">:</span> <span class="ot">[</span> <span class="er">//</span> <span class="er">sandbox</span> <span class="er">&#x5185;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;</span></a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">    <span class="st">&quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb12-15" data-line-number="15">    <span class="st">&quot;HOME=/tmp&quot;</span></a>
+<a class="sourceLine" id="cb12-16" data-line-number="16">  <span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-17" data-line-number="17">  <span class="dt">&quot;SandboxUser&quot;</span><span class="fu">:</span> <span class="st">&quot;nobody&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb12-18" data-line-number="18">  <span class="dt">&quot;SandboxRoot&quot;</span><span class="fu">:</span> <span class="st">&quot;/sandbox-rootfs&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">sandbox</span> <span class="er">&#x6240;&#x5728;&#x76EE;&#x5F55;</span></a>
+<a class="sourceLine" id="cb12-19" data-line-number="19">  <span class="dt">&quot;BinaryDirectory&quot;</span><span class="fu">:</span> <span class="st">&quot;/mnt/syzoj-bin&quot;</span> <span class="er">//</span> <span class="er">runner</span> <span class="er">&#x6240;&#x8981;&#x6267;&#x884C;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;</span></a>
+<a class="sourceLine" id="cb12-20" data-line-number="20"><span class="fu">}</span></a></code></pre></div>
 <p><code>runner-instance1.json</code></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  &quot;WorkingDirectory&quot;: &quot;/mnt/syzoj-tmp1&quot;, // &#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</span><br><span class="line">  &quot;SandboxCgroup&quot;: &quot;syzoj-1&quot; // sandbox &#x76F8;&#x5173;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb13"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">  <span class="dt">&quot;WorkingDirectory&quot;</span><span class="fu">:</span> <span class="st">&quot;/mnt/syzoj-tmp1&quot;</span><span class="fu">,</span> <span class="er">//</span> <span class="er">&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">  <span class="dt">&quot;SandboxCgroup&quot;</span><span class="fu">:</span> <span class="st">&quot;syzoj-1&quot;</span> <span class="er">//</span> <span class="er">sandbox</span> <span class="er">&#x76F8;&#x5173;</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="fu">}</span></a></code></pre></div>
 <h3 id="&#x521B;&#x5EFA;-systemd-&#x7CFB;&#x7EDF;&#x670D;&#x52A1;">&#x521B;&#x5EFA; systemd &#x7CFB;&#x7EDF;&#x670D;&#x52A1;</h3>
 <p>&#x5206;&#x522B;&#x5728; <code>/etc/systemd/system/</code> &#x76EE;&#x5F55;&#x4E0B;&#x5EFA;&#x7ACB;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#x5E76;&#x5199;&#x5165;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5982;&#x679C;&#x4F60;&#x662F;&#x7528; nvm &#x6216;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x5B89;&#x88C5;&#x4E86; Node.js&#xFF0C;<code>node</code> &#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4E0D;&#x540C;&#xFF0C;&#x8BF7;&#x81EA;&#x884C;&#x4FEE;&#x6539;&#x3002;</p>
 <p><code>syzoj-web.service</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SYZOJ Online Judge</span><br><span class="line">After=network.target mysql.service</span><br><span class="line">Requires=mysql.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=/var/syzoj-web</span><br><span class="line">User=syzoj</span><br><span class="line">Group=syzoj</span><br><span class="line">ExecStart=/usr/bin/node /var/syzoj-web/app.js -c /etc/syzoj-config/web.json</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<pre><code>[Unit]
+Description=SYZOJ Online Judge
+After=network.target mysql.service
+Requires=mysql.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/syzoj-web
+User=syzoj
+Group=syzoj
+ExecStart=/usr/bin/node /var/syzoj-web/app.js -c /etc/syzoj-config/web.json
+
+[Install]
+WantedBy=multi-user.target</code></pre>
 <p><code>syzoj-judge-daemon.service</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SYZOJ Daemon</span><br><span class="line">After=network.target mysql.service rabbitmq-server.service redis-server.service</span><br><span class="line">Requires=mysql.service rabbitmq-server.service redis-server.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=/var/syzoj-judge-v3</span><br><span class="line">User=syzoj</span><br><span class="line">Group=syzoj</span><br><span class="line">ExecStart=/usr/bin/node /var/syzoj-judge-v3/lib/daemon/index.js -c /etc/syzoj-config/daemon.json</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<pre><code>[Unit]
+Description=SYZOJ Daemon
+After=network.target mysql.service rabbitmq-server.service redis-server.service
+Requires=mysql.service rabbitmq-server.service redis-server.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/syzoj-judge-v3
+User=syzoj
+Group=syzoj
+ExecStart=/usr/bin/node /var/syzoj-judge-v3/lib/daemon/index.js -c /etc/syzoj-config/daemon.json
+
+[Install]
+WantedBy=multi-user.target</code></pre>
 <p><code>syzoj-judge-frontend.service</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SYZOJ Judge Frontend</span><br><span class="line">After=network.target rabbitmq-server.service</span><br><span class="line">Requires=syzoj-web.service rabbitmq-server.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=/var/syzoj-judge-v3</span><br><span class="line">User=syzoj</span><br><span class="line">Group=syzoj</span><br><span class="line">ExecStart=/usr/bin/node /var/syzoj-judge-v3/lib/frontend-syzoj/index.js -c /etc/syzoj-config/frontend.json</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<pre><code>[Unit]
+Description=SYZOJ Judge Frontend
+After=network.target rabbitmq-server.service
+Requires=syzoj-web.service rabbitmq-server.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/syzoj-judge-v3
+User=syzoj
+Group=syzoj
+ExecStart=/usr/bin/node /var/syzoj-judge-v3/lib/frontend-syzoj/index.js -c /etc/syzoj-config/frontend.json
+
+[Install]
+WantedBy=multi-user.target</code></pre>
 <p><code>syzoj-judge-runner@.service</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SYZOJ Runner %I</span><br><span class="line">After=network.target rabbitmq-server.service redis-server.service</span><br><span class="line">Requires=rabbitmq-server.service redis-server.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=/var/syzoj-judge-v3</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">ExecStart=/usr/bin/node /var/syzoj-judge-v3/lib/runner/index.js -s /etc/syzoj-config/runner-shared.json -i /etc/syzoj-config/runner-instance%i.json</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<pre><code>[Unit]
+Description=SYZOJ Runner %I
+After=network.target rabbitmq-server.service redis-server.service
+Requires=rabbitmq-server.service redis-server.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/syzoj-judge-v3
+User=root
+Group=root
+ExecStart=/usr/bin/node /var/syzoj-judge-v3/lib/runner/index.js -s /etc/syzoj-config/runner-shared.json -i /etc/syzoj-config/runner-instance%i.json
+
+[Install]
+WantedBy=multi-user.target</code></pre>
 <p>&#x6B32;&#x542F;&#x7528;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#xFF0C;&#x8BF7;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x952E;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable syzoj-web</span><br><span class="line">systemctl enable syzoj-judge-daemon</span><br><span class="line">systemctl enable syzoj-judge-frontend</span><br><span class="line">systemctl enable syzoj-judge-runner@1</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>systemctl enable syzoj-web
+systemctl enable syzoj-judge-daemon
+systemctl enable syzoj-judge-frontend
+systemctl enable syzoj-judge-runner@1</code></pre>
 <h3 id="&#x521B;&#x5EFA;-syzoj-&#x7CFB;&#x7EDF;&#x7528;&#x6237;">&#x521B;&#x5EFA; syzoj &#x7CFB;&#x7EDF;&#x7528;&#x6237;</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">useradd syzoj</span><br><span class="line">mkdir /home/syzoj</span><br><span class="line">chown -R syzoj:syzoj /mnt/syzoj-data</span><br><span class="line">chown -R syzoj:syzoj /mnt/syzoj-bin</span><br><span class="line">chown -R syzoj:syzoj /mnt/syzoj-tmp1</span><br><span class="line">chown -R syzoj:syzoj /var/syzoj-web</span><br><span class="line">chown -R syzoj:syzoj /var/syzoj-judge-v3</span><br><span class="line">chown -R syzoj:syzoj /home/syzoj</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>useradd syzoj
+mkdir /home/syzoj
+chown -R syzoj:syzoj /mnt/syzoj-data
+chown -R syzoj:syzoj /mnt/syzoj-bin
+chown -R syzoj:syzoj /mnt/syzoj-tmp1
+chown -R syzoj:syzoj /var/syzoj-web
+chown -R syzoj:syzoj /var/syzoj-judge-v3
+chown -R syzoj:syzoj /home/syzoj</code></pre>
 <h3 id="&#x914D;&#x7F6E;&#x4E34;&#x65F6;&#x76EE;&#x5F55;">&#x914D;&#x7F6E;&#x4E34;&#x65F6;&#x76EE;&#x5F55;</h3>
 <p>SYZOJ &#x4F7F;&#x7528; tmpfs &#x6302;&#x8F7D;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x3002;&#x4F60;&#x9700;&#x8981;&#x5728; <code>/etc/fstab</code> &#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x3002;</p>
 <p><code>/etc/fstab</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># The following items are for SYZOJ Judge:</span><br><span class="line">tmpfs /mnt/syzoj-tmp1 tmpfs nodev,nosuid,size=384M 0 2</span><br><span class="line">tmpfs /mnt/syzoj-bin tmpfs nodev,nosuid,size=1280M 0 2</span><br><span class="line">tmpfs /mnt/syzoj-tmp2 tmpfs nodev,nosuid,size=384M 0 2</span><br></pre></td></tr></table></figure>
+<pre><code># The following items are for SYZOJ Judge:
+tmpfs /mnt/syzoj-tmp1 tmpfs nodev,nosuid,size=384M 0 2
+tmpfs /mnt/syzoj-bin tmpfs nodev,nosuid,size=1280M 0 2
+tmpfs /mnt/syzoj-tmp2 tmpfs nodev,nosuid,size=384M 0 2</code></pre>
 <p><code>/etc/fstab</code> &#x6587;&#x4EF6;&#x4F1A;&#x5728;&#x91CD;&#x542F;&#x540E;&#x751F;&#x6548;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x7ACB;&#x5373;&#x91CD;&#x542F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x6302;&#x8F7D;&#x3002;&#x5177;&#x4F53;&#x65B9;&#x5F0F;&#x8BF7;&#x81EA;&#x884C;&#x63A2;&#x7D22;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;</p>
 <h3 id="&#x914D;&#x7F6E;-nginx-&#x53CD;&#x5411;&#x4EE3;&#x7406;">&#x914D;&#x7F6E; Nginx &#x53CD;&#x5411;&#x4EE3;&#x7406;</h3>
 <p>SYZOJ web &#x7AEF;&#x7684;&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x662F;5283&#x3002;&#x60F3;&#x8981;&#x4ECE;&#x5916;&#x90E8;&#x7F51;&#x7EDC;&#x4E0D;&#x52A0;&#x7AEF;&#x53E3;&#x5730;&#x8BBF;&#x95EE;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x914D;&#x7F6E; Nginx &#x4EE5;&#x5C06;5283&#x7AEF;&#x53E3;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x5230;80&#x7AEF;&#x53E3;&#x3002;</p>
 <p>&#x5728; <code>/etc/nginx/sites-available</code> &#x76EE;&#x5F55;&#x4E0B;&#x5EFA;&#x7ACB;&#x540D;&#x4E3A; <code>syzoj</code> &#x548C; <code>syzoj-judge</code> &#x7684;&#x6587;&#x4EF6;&#x3002;&#x4E2D;&#x62EC;&#x53F7;&#x4E2D;&#x5185;&#x5BB9;&#x8BF7;&#x81EA;&#x884C;&#x66FF;&#x6362;&#xFF0C;&#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#xFF0C;&#x4E2D;&#x62EC;&#x53F7;&#x5904;&#x5728;&#x5B98;&#x65B9;&#x793A;&#x4F8B;&#x6587;&#x4EF6;&#x4E2D;&#x5206;&#x522B;&#x4E3A; <code>syzoj-demo.t123yh.xyz</code>&#x4E0E; <code>syzoj-demo-judge.t123yh.xyz</code>&#x3002;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#x914D;&#x7F6E; ssl&#xFF0C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x914D;&#x7F6E;&#x3002;</p>
 <p><code>syzoj</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name [your_domain_or_ip];</span><br><span class="line"></span><br><span class="line">	location / {</span><br><span class="line">		proxy_set_header Host $http_host;</span><br><span class="line">		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">		proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">		proxy_pass http://127.0.0.1:5283;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<pre><code>server {
+    listen 80;
+    server_name [your_domain_or_ip];
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Real-IP $remote_addr;
+
+        proxy_pass http://127.0.0.1:5283;
+    }
+}</code></pre>
 <p><code>syzoj-judge</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server {</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name [your_judge_domain];</span><br><span class="line"></span><br><span class="line">	location / {</span><br><span class="line">		proxy_set_header Host $host;</span><br><span class="line">		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">		proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">		proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">		proxy_http_version 1.1;</span><br><span class="line">		proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">		proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line"></span><br><span class="line">		proxy_pass http://127.0.0.1:5284;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<pre><code>server {
+    listen 80;
+    server_name [your_judge_domain];
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Real-IP $remote_addr;
+
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+
+        proxy_pass http://127.0.0.1:5284;
+    }
+}</code></pre>
 <p>&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x4EE5;&#x542F;&#x7528;&#x521A;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-available/syzoj /etc/nginx/sites-enabled/syzoj</span><br><span class="line">ln -s /etc/nginx/sites-available/syzoj-judge /etc/nginx/sites-enabled/syzoj-judge</span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>ln -s /etc/nginx/sites-available/syzoj /etc/nginx/sites-enabled/syzoj
+ln -s /etc/nginx/sites-available/syzoj-judge /etc/nginx/sites-enabled/syzoj-judge
+nginx -s reload</code></pre>
 <h3 id="&#x5728;&#x7F51;&#x7AD9;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x5E76;&#x8BBE;&#x7F6E;&#x4E3A;&#x7BA1;&#x7406;&#x5458;">&#x5728;&#x7F51;&#x7AD9;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x5E76;&#x8BBE;&#x7F6E;&#x4E3A;&#x7BA1;&#x7406;&#x5458;</h3>
 <p>&#x6B64;&#x65F6; SYZOJ &#x5DF2;&#x90E8;&#x7F72;&#x5B8C;&#x6BD5;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x542F;&#x52A8;&#x3002;</p>
 <p>&#x542F;&#x52A8;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x51E0;&#x79CD;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5728;&#x90E8;&#x7F72;&#x6D4B;&#x8BD5;&#x4E2D;&#x67E5;&#x770B;&#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>screen</code> &#x547D;&#x4EE4;&#x6253;&#x5F00;&#x56DB;&#x4E2A;&#x4F1A;&#x8BDD;&#x5E76;&#x5206;&#x522B;&#x540E;&#x53F0;&#x8FD0;&#x884C; web&#x3001;daemon&#x3001;frontend &#x548C; runner&#x3002;</p>
 <p>&#x56DB;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x5206;&#x522B;&#x662F;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node /var/syzoj-web/app.js -c /etc/syzoj-config/web.json</span><br><span class="line">node /var/syzoj-judge-v3/lib/frontend-syzoj/index.js -c /etc/syzoj-config/frontend.json</span><br><span class="line">node /var/syzoj-judge-v3/lib/runner/index.js -s /etc/syzoj-config/runner-shared.json -i /etc/syzoj-config/runner-instance1.json</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>node /var/syzoj-web/app.js -c /etc/syzoj-config/web.json
+node /var/syzoj-judge-v3/lib/frontend-syzoj/index.js -c /etc/syzoj-config/frontend.json
+node /var/syzoj-judge-v3/lib/runner/index.js -s /etc/syzoj-config/runner-shared.json -i /etc/syzoj-config/runner-instance1.json</code></pre>
 <p><code>screen</code> &#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;&#x521A;&#x624D;&#x5EFA;&#x7ACB;&#x597D;&#x7684;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x3002;&#x6267;&#x884C;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start syzoj-web</span><br><span class="line">systemctl start syzoj-judge-daemon</span><br><span class="line">systemctl start syzoj-judge-frontend</span><br><span class="line">systemctl start syzoj-judge-runner@1</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>systemctl start syzoj-web
+systemctl start syzoj-judge-daemon
+systemctl start syzoj-judge-frontend
+systemctl start syzoj-judge-runner@1</code></pre>
 <p>&#x6267;&#x884C;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF0C;<code>ps-ef | grep node</code> &#x5E94;&#x8BE5;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F60;&#x7684;&#x56DB;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x770B;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x81EA;&#x884C;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x6216;&#x8003;&#x8651;&#x4F7F;&#x7528; <code>screen</code> &#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF0C;&#x90A3;&#x4E48;&#x6B64;&#x65F6;&#x8BBF;&#x95EE; <code>http://&#x670D;&#x52A1;&#x5668;ip&#x6216;&#x57DF;&#x540D;</code> &#x5E94;&#x8BE5;&#x80FD;&#x6253;&#x5F00; SYZOJ &#x7684;&#x9ED8;&#x8BA4;&#x754C;&#x9762;&#x3002;&#x4F60;&#x5E94;&#x8BE5;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x65B0;&#x7528;&#x6237;&#x5E76;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;&#x7BA1;&#x7406;&#x5458;&#x3002;</p>
 <p>&#x6CE8;&#x518C;&#x540E;&#xFF0C;&#x8FDB;&#x5165; MySQL Cli&#xFF0C;&#x952E;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x81EA;&#x884C;&#x66FF;&#x6362;&#x4E2D;&#x62EC;&#x53F7;&#x5185;&#x5BB9;&#x3002;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">USE syzoj;</span><br><span class="line">UPDATE `user` SET `is_admin` = 1 WHERE `username` = &apos;[your_username]&apos;;</span><br></pre></td></tr></table></figure>
+<pre class="mysql"><code>USE syzoj;
+UPDATE `user` SET `is_admin` = 1 WHERE `username` = &apos;[your_username]&apos;;</code></pre>
 <p>&#x5237;&#x65B0;&#x9875;&#x9762;&#xFF0C;&#x5E94;&#x8BE5;&#x80FD;&#x770B;&#x5230;&#x4F60;&#x7684;&#x8D26;&#x6237;&#x5DF2;&#x7ECF;&#x6210;&#x4E86;&#x5168;&#x7AD9;&#x7BA1;&#x7406;&#x5458;&#x3002;SYZOJ &#x7684;&#x5168;&#x7AD9;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x66F4;&#x6539;&#x6570;&#x636E;&#x5E93;&#x7684;&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x3002;</p>
 <p>&#x8FD9;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x52A0;&#x5165;&#x9898;&#x76EE;&#x5E76;&#x63D0;&#x4EA4;&#x4EE5;&#x6D4B;&#x8BD5;&#x8BC4;&#x6D4B;&#x7AEF;&#x662F;&#x5426;&#x8FD0;&#x884C;&#x6B63;&#x5E38;&#x3002;&#x5982;&#x679C;&#x6210;&#x529F;&#x8BC4;&#x6D4B;&#x5E76;&#x663E;&#x793A;&#x7ED3;&#x679C;&#xFF0C;&#x90A3;&#x4E48;&#x606D;&#x559C;&#x4F60;&#xFF0C;&#x4F60;&#x7684; SYZOJ &#x90E8;&#x7F72;&#x6210;&#x529F;&#x3002;&#x6CE8;&#x610F;&#x5982;&#x679C;&#x6DFB;&#x52A0;&#x8FC7;&#x9898;&#x76EE;&#x53C8;&#x5220;&#x9664;&#xFF0C;&#x90A3;&#x4E48;&#x81EA;&#x52A8;&#x589E;&#x957F;&#x7684;&#x9ED8;&#x8BA4;&#x9898;&#x76EE;&#x7F16;&#x53F7;&#x4E0D;&#x4F1A;&#x6392;&#x9664;&#x88AB;&#x5220;&#x9664;&#x7684;&#x9898;&#x76EE;&#xFF0C;&#x6240;&#x4EE5;&#x8BF7;&#x8C28;&#x614E;&#x6DFB;&#x52A0;&#x3002;&#x5982;&#x679C;&#x786E;&#x5B9E;&#x6DFB;&#x52A0;&#x9519;&#x4E86;&#x9898;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5C06;&#x4E0B;&#x4E00;&#x9053;&#x65B0;&#x9898;&#x76EE;&#x901A;&#x8FC7;&#x7F16;&#x8F91;&#x9519;&#x8BEF;&#x9898;&#x76EE;&#x7684;&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x3002;</p>
 <h3 id="&#x95EE;&#x9898;&#x6392;&#x67E5;">&#x95EE;&#x9898;&#x6392;&#x67E5;</h3>
@@ -104,20 +633,79 @@
 <p>&#x5982;&#x679C;&#x663E;&#x793A; 502 Bad Gateway&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE; <code>http://&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;:5283/</code> &#x3002;&#x5982;&#x679C;&#x6210;&#x529F;&#x6253;&#x5F00;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x80FD;&#x662F; Nginx &#x7684;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x8BBE;&#x7F6E;&#x9519;&#x8BEF;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x5728;&#x63D0;&#x4EA4;&#x540E;&#x8BC4;&#x6D4B;&#x72B6;&#x6001;&#x59CB;&#x7EC8;&#x4E3A; Waiting&#xFF0C;&#x8BF7;&#x5148;&#x5237;&#x65B0;&#x9875;&#x9762;&#x3002;&#x5982;&#x679C;&#x5237;&#x65B0;&#x591A;&#x6B21;&#x540E;&#x4ECD;&#x4E3A; Waiting&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x731C;&#x6D4B;&#x8BC4;&#x6D4B;&#x7AEF;&#x51FA;&#x4E86;&#x95EE;&#x9898;&#x3002;&#x8BF7;&#x9010;&#x4E2A;&#x6392;&#x67E5; daemon&#x3001;frontend &#x4E0E; runner&#x3002;</p>
 <p>&#x5982;&#x679C;&#x8FD0;&#x884C; runner &#x540E;&#x663E;&#x793A;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING: You are likely using a version of node-tar or npm that is incompatible with this version of Node.js.</span><br></pre></td></tr></table></figure>
+<pre><code>WARNING: You are likely using a version of node-tar or npm that is incompatible with this version of Node.js.</code></pre>
 <p>&#x6709;&#x53EF;&#x80FD;&#x662F; Node.js &#x7684;&#x7248;&#x672C;&#x95EE;&#x9898;&#x3002;&#x8BF7;&#x5B89;&#x88C5;&#x6587;&#x9996;&#x63A8;&#x8350;&#x7684; Node.js &#x7248;&#x672C;&#x91CD;&#x8BD5;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x8FD0;&#x884C; frontend &#x540E;&#x51FA;&#x73B0;&#x4E24;&#x884C;&#x627E;&#x4E0D;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x8003;&#x8651; <code>cd</code> &#x5230; <code>/var/syzoj-judge-v3</code>&#x4E0B;&#x540E;&#x518D;&#x6267;&#x884C;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node /var/syzoj-judge-v3/lib/frontend-syzoj/index.js -c /etc/syzoj-config/frontend.json</span><br></pre></td></tr></table></figure>
+<pre class="shell"><code>node /var/syzoj-judge-v3/lib/frontend-syzoj/index.js -c /etc/syzoj-config/frontend.json</code></pre>
 <h3 id="&#x7ED3;&#x8BED;">&#x7ED3;&#x8BED;</h3>
 <p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C;SYZOJ &#x7684;&#x90E8;&#x7F72;&#x5E94;&#x8BE5;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x7F6E;&#x6216;&#x81EA;&#x884C;&#x5B9A;&#x5236; SYZOJ &#x7CFB;&#x7EDF;&#x672C;&#x8EAB;&#x3002;&#x5982;&#x679C;&#x60F3;&#x8FDB;&#x4E00;&#x6B65;&#x6298;&#x817E;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5728; docker &#x4E2D;&#x90E8;&#x7F72; SYZOJ&#xFF0C;&#x65B9;&#x4FBF;&#x91CD;&#x65B0;&#x90E8;&#x7F72;&#x3001;&#x5907;&#x4EFD;&#x6570;&#x636E;&#x3002;&#xFF08;&#x5982;&#x679C;&#x4F60;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x5E0C;&#x671B;&#x4F60;&#x5411;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4EA4;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x6216;&#x8005;&#x53D1;&#x5E03;&#x6253;&#x5305;&#x597D;&#x7684; image &#x6765;&#x9020;&#x798F;&#x793E;&#x4F1A;&#xFF08;</p>
 <p>&#x611F;&#x8C22; Menci &#x4E0E; t123yh &#x5F00;&#x53D1;&#x4E86;&#x5982;&#x6B64;&#x65B9;&#x4FBF;&#x6613;&#x7528;&#x7684;OJ&#x5E76;&#x5F00;&#x6E90;&#x3002;</p>
 <p>Finita la comedia.</p>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-21</span><i class="fa fa-comment-o"></i><a href="/2018/08/syzoj-setup/#comments">评论</a><i class="fa fa-archive"></i><a href="/categories/其他/" title="其他" class="tag">其他 </a><i class="fa fa-tag"></i><a href="/tags/Linux/" title="Linux" class="tag">Linux </a><a href="/tags/SYZOJ/" title="SYZOJ" class="tag">SYZOJ </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,https://blog.masellum.me/2018/08/syzoj-setup/,Mas's Blog,SYZOJ 部署指南,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2018/08/NOIP2010-TurtleChess/" title="[NOIP2010] 乌龟棋" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2018/08/NOIP2013-TruckTransportation/" title="[NOIP2013] 货车运输" class="btn">下一篇</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'masellum-blog';
-var disqus_identifier = '2018/08/syzoj-setup/';
-var disqus_title = 'SYZOJ 部署指南';
-var disqus_url = 'https://blog.masellum.me/2018/08/syzoj-setup/';
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();</script><script id="dsq-count-scr" src="//masellum-blog.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+
+                </div>
+            </div>
+    
+            <nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2018/08/NOIP2010-TurtleChess/">
+        上一篇<br>[NOIP2010] 乌龟棋
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2018/08/NOI2002-LegendOfTheGalaxyHeroes/">
+        下一篇<br>[NOI2002] 银河英雄传说
+    </a>
+    
+</nav>
+
+    
+            
+
+<div class="post-comment-wrapper">
+    <div id="disqus_thread"></div>
+</div>
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2018 <a href="https://blog.masellum.me">Mas&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"
+        integrity="sha256-EGs9T1xMHdvM1geM8jPpoo8EZ1V1VRsmcJz8OByENLA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"
+        integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js"
+        integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
+<script src="/js/journal.js?10222296"></script>
+
+
+<script>
+    var disqus_shortname = 'masellum-blog';
+    var disqus_config = function () {
+        this.page.url = 'https://blog.masellum.me/2018/08/syzoj-setup/';
+        this.page.identifier = '/2018/08/syzoj-setup/';
+    };
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.body || d.head).appendChild(s);
+    })();
+</script>
+
+
+</body>
+</html>
