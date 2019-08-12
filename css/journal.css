@@ -247,7 +247,8 @@ a {
   text-align: right;
   font-family: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", "Arial", "Lora", "source-han-serif-tc", serif;
   padding: 20px 0 50px 0;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }

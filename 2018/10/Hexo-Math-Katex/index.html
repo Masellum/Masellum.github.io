@@ -4,7 +4,7 @@
 <html lang="zh-CN" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>为 Hexo 更换数学渲染引擎为 KaTeX - Mas&#39;s Blog</title>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>为 Hexo 更换数学渲染引擎为 KaTeX - Mas&#39;s Blog</title>
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Masellum Guo">
@@ -20,7 +20,7 @@
     <meta name="renderer" content="webkit">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?35129869">
+<link rel="stylesheet" href="/css/journal.css?82673755">
 <script src="/js/loadCSS.js"></script>
 <script>
     loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
@@ -55,11 +55,11 @@
           href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons"/>
 </noscript>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 <body>
-<div id="top"></div>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="top"></div>
 <div id="app">
 <div class="single-column-drawer-container" ref="drawer"
      v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
@@ -220,14 +220,14 @@
 <p>&#x6765;&#x5B89;&#x88C5;&#x3002;&#x867D;&#x7136;&#x5B98;&#x65B9;&#x5B89;&#x88C5;&#x6587;&#x6863;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4E4B;&#x540E;&#x5378;&#x8F7D;&#x4E86;&#x9ED8;&#x8BA4;&#x7684; hexo-renderer-marked &#x63D2;&#x4EF6;&#xFF1A;</p>
 <pre class="shell"><code>npm uninstall hexo-renderer-marked --save</code></pre>
 <p>&#x66F4;&#x6539;&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>_config.yml</code> &#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x5176;&#x4E2D;&#x52A0;&#x5165;&#x5982;&#x4E0B;&#x6587;&#x672C;&#xFF1A;</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">pandoc:</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="fu">mathEngine:</span><span class="at"> katex</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">pandoc</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="at">  </span><span class="fu">mathEngine</span><span class="kw">:</span><span class="at"> katex</span></span></code></pre></div>
 <p>&#x6765;&#x542F;&#x7528; KaTeX&#x3002;</p>
 <h2 id="&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;-hexo-katex">&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E; hexo-katex</h2>
 <pre class="shell"><code>npm install hexo-katex --save</code></pre>
 <p>&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x7684;&#x9879;&#x76EE;&#x4E3B;&#x9875;&#x6240;&#x8BF4;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x5E2E;&#x4F60;&#x63D2;&#x5165; KaTeX &#x6240;&#x9700;&#x7684; CSS &#x6587;&#x4EF6;&#x4E0E; JavaScript &#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x597D;&#x50CF;&#x5728;&#x6211;&#x8FD9;&#x91CC;&#x4E0D;&#x592A;&#x597D;&#x7528;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x9009;&#x62E9;&#x5173;&#x95ED;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5E76;&#x81EA;&#x5DF1;&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#x3002;&#x66F4;&#x6539;&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>_config.yml</code> &#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x5176;&#x4E2D;&#x52A0;&#x5165;&#x5982;&#x4E0B;&#x6587;&#x672C;&#xFF1A;</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">katex:</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="fu">css:</span><span class="at"> false</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">katex</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div>
 <p>&#x6765;&#x5173;&#x95ED;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x3002;</p>
 <p>&#x81EA;&#x5DF1;&#x66F4;&#x6539;&#x4F60;&#x7684;&#x4E3B;&#x9898;&#x4E2D;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x8BA9;&#x4F60;&#x7684;&#x4E3B;&#x9898;&#x5728;&#x6BCF;&#x7BC7;&#x535A;&#x5BA2;&#x4E2D;&#x9002;&#x5F53;&#x7684;&#x4F4D;&#x7F6E;&#x52A0;&#x5165; KaTeX &#x6240;&#x9700;&#x8981;&#x7684; <code>&lt;script&gt;</code> &#x4E0E; <code>&lt;link&gt;</code> &#x6807;&#x7B7E;&#x4EE5;&#x6DFB;&#x52A0;&#x6240;&#x9700;&#x7684; JavaScript &#x6587;&#x4EF6;&#x4E0E; CSS &#x6587;&#x4EF6;&#xFF0C;&#x4E4B;&#x540E; KaTeX &#x5E94;&#x8BE5;&#x5C31;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x4E86;&#x3002;</p>
 <h1 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h1>
@@ -286,7 +286,7 @@
         integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@14.2.1/dist/smooth-scroll.polyfills.min.js"
         integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-<script src="/js/journal.js?91791078"></script>
+<script src="/js/journal.js?87388155"></script>
 
 
 <script>
@@ -301,7 +301,7 @@
         s.setAttribute('data-timestamp', +new Date());
         (d.body || d.head).appendChild(s);
     })();
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 </body>
