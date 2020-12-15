@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="zh_CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script><script src="/js/loadCSS.js"></script><script>loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
+(function (d) {
+    var config = {
+            kitId: 'dwg1tuc',
+            scriptTimeout: 3000,
+            async: true
+        },
+        h = d.documentElement, t = setTimeout(function () {
+            h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+        }, config.scriptTimeout), tk = d.createElement("script"), f = false,
+        s = d.getElementsByTagName("script")[0], a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try {
+            Typekit.load(config)
+        } catch (e) {
+        }
+    };
+    s.parentNode.insertBefore(tk, s)
+})(document);</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons"></noscript><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/favicon.png"><title>[NOIP2013] 货车运输</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Anonymous Sea" type="application/atom+xml">
+</head><body>　　<div class="inner"><h2>[NOIP2013] 货车运输</h2><h1 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h1>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/P1967">&#x9898;&#x76EE;&#x94FE;&#x63A5;</a></p>
+<h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h2>
+<p>A &#x56FD;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> &#x5EA7;&#x57CE;&#x5E02;&#xFF0C;&#x7F16;&#x53F7;&#x4ECE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> &#x5230; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> &#xFF0C;&#x57CE;&#x5E02;&#x4E4B;&#x95F4;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> &#x6761;&#x53CC;&#x5411;&#x9053;&#x8DEF;&#x3002;&#x6BCF;&#x4E00;&#x6761;&#x9053;&#x8DEF;&#x5BF9;&#x8F66;&#x8F86;&#x90FD;&#x6709;&#x91CD;&#x91CF;&#x9650;&#x5236;&#xFF0C;&#x7B80;&#x79F0;&#x9650;&#x91CD;&#x3002;&#x73B0;&#x5728;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span> &#x8F86;&#x8D27;&#x8F66;&#x5728;&#x8FD0;&#x8F93;&#x8D27;&#x7269;&#xFF0C;&#x53F8;&#x673A;&#x4EEC;&#x60F3;&#x77E5;&#x9053;&#x6BCF;&#x8F86;&#x8F66;&#x5728;&#x4E0D;&#x8D85;&#x8FC7;&#x8F66;&#x8F86;&#x9650;&#x91CD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x8FD0;&#x591A;&#x91CD;&#x7684;&#x8D27;&#x7269;&#x3002;</p>
+<h2 id="&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x683C;&#x5F0F;">&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x683C;&#x5F0F;</h2>
+<h3 id="&#x8F93;&#x5165;&#x683C;&#x5F0F;">&#x8F93;&#x5165;&#x683C;&#x5F0F;</h3>
+<p>&#x7B2C;&#x4E00;&#x884C;&#x6709;&#x4E24;&#x4E2A;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#x7684;&#x6574;&#x6570; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n, m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span></span></span></span> &#xFF0C;&#x8868;&#x793A; A &#x56FD;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> &#x5EA7;&#x57CE;&#x5E02;&#x548C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> &#x6761;&#x9053;&#x8DEF;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> &#x884C;&#x6BCF;&#x884C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> &#x4E2A;&#x6574;&#x6570; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x, y, z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> &#xFF0C;&#x6BCF;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x4E4B;&#x95F4;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#xFF0C;&#x8868;&#x793A;&#x4ECE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> &#x53F7;&#x57CE;&#x5E02;&#x5230; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> &#x53F7;&#x57CE;&#x5E02;&#x6709;&#x4E00;&#x6761;&#x9650;&#x91CD;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> &#x7684;&#x9053;&#x8DEF;&#x3002;&#x6CE8;&#x610F;&#xFF1A; <strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> &#x4E0D;&#x7B49;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> &#xFF0C;&#x4E24;&#x5EA7;&#x57CE;&#x5E02;&#x4E4B;&#x95F4;&#x53EF;&#x80FD;&#x6709;&#x591A;&#x6761;&#x9053;&#x8DEF;</strong>&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x4E00;&#x884C;&#x6709;&#x4E00;&#x4E2A;&#x6574;&#x6570; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span>&#xFF0C;&#x8868;&#x793A;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span> &#x8F86;&#x8D27;&#x8F66;&#x9700;&#x8981;&#x8FD0;&#x8D27;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span> &#x884C;&#xFF0C;&#x6BCF;&#x884C;&#x4E24;&#x4E2A;&#x6574;&#x6570; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> &#xFF0C;&#x4E4B;&#x95F4;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x8F86;&#x8D27;&#x8F66;&#x9700;&#x8981;&#x4ECE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> &#x57CE;&#x5E02;&#x8FD0;&#x8F93;&#x8D27;&#x7269;&#x5230; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> &#x57CE;&#x5E02;&#xFF0C;&#x6CE8;&#x610F;&#xFF1A;<strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> &#x4E0D;&#x7B49;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span></strong>&#x3002;</p>
+<h3 id="&#x8F93;&#x51FA;&#x683C;&#x5F0F;">&#x8F93;&#x51FA;&#x683C;&#x5F0F;</h3>
+<p>&#x5171;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span> &#x884C;&#xFF0C;&#x6BCF;&#x884C;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x8F86;&#x8D27;&#x8F66;&#xFF0C;&#x5B83;&#x7684;&#x6700;&#x5927;&#x8F7D;&#x91CD;&#x662F;&#x591A;&#x5C11;&#x3002;&#x5982;&#x679C;&#x8D27;&#x8F66;&#x4E0D;&#x80FD;&#x5230;&#x8FBE;&#x76EE;&#x7684;&#x5730;&#xFF0C;&#x8F93;&#x51FA; <code>-1</code> &#x3002;</p>
+<h3 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h3>
+<p>&#x5BF9;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>30</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">30\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">%</span></span></span></span> &#x7684;&#x6570;&#x636E;&#xFF0C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>n</mi><mo>&lt;</mo><mn>1</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>0</mn><mo>&lt;</mo><mi>m</mi><mo>&lt;</mo><mn>10</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>0</mn><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mn>1</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">0 &lt; n &lt; 1,000,0 &lt; m &lt; 10,000,0 &lt; q&lt; 1,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>&#xFF1B;</p>
+<p>&#x5BF9;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">60\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mord">%</span></span></span></span> &#x7684;&#x6570;&#x636E;&#xFF0C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>n</mi><mo>&lt;</mo><mn>1</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>0</mn><mo>&lt;</mo><mi>m</mi><mo>&lt;</mo><mn>50</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>0</mn><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mn>1</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">0 &lt; n &lt; 1,000,0 &lt; m &lt; 50,000,0 &lt; q&lt; 1,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>&#xFF1B;</p>
+<p>&#x5BF9;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span> &#x7684;&#x6570;&#x636E;&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>n</mi><mo>&lt;</mo><mn>10</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>0</mn><mo>&lt;</mo><mi>m</mi><mo>&lt;</mo><mn>50</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>0</mn><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mn>30</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>0</mn><mo>&#x2264;</mo><mi>z</mi><mo>&#x2264;</mo><mn>100</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">0 &lt; n &lt; 10,000,0 &lt; m &lt; 50,000,0 &lt; q&lt; 30,000,0 \le z \le 100,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2264;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2264;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>&#x3002;</p>
+<h1 id="&#x9898;&#x89E3;">&#x9898;&#x89E3;</h1>
+<p>&#x7B80;&#x5316;&#x9898;&#x610F;&#x4E3A;&#x5728;&#x65E0;&#x5411;&#x56FE;&#x4E0A;&#x6C42;&#x7ED9;&#x5B9A;&#x4E24;&#x70B9;&#x95F4;&#x8DEF;&#x5F84;&#x4E0A;&#x8FB9;&#x6743;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>&#x663E;&#x7136;&#x5F53;&#x8FD9;&#x6761;&#x8DEF;&#x5F84;&#x5728;&#x65E0;&#x5411;&#x56FE;&#x7684;&#x6700;&#x5927;&#x751F;&#x6210;&#x6811;&#x4E0A;&#x65F6;&#x8DEF;&#x5F84;&#x4E0A;&#x5404;&#x8FB9;&#x8FB9;&#x6743;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x6700;&#x5927;&#xFF0C;&#x5426;&#x5219;&#x4E00;&#x5B9A;&#x80FD;&#x5728;&#x6700;&#x5927;&#x751F;&#x6210;&#x6811;&#x4E0A;&#x627E;&#x5230;&#x4E00;&#x6761;&#x8DEF;&#x5F84;&#x4F7F;&#x6700;&#x5C0F;&#x503C;&#x6BD4;&#x5F53;&#x524D;&#x6700;&#x5C0F;&#x503C;&#x66F4;&#x5927;&#x3002;</p>
+<p>&#x6C42;&#x6700;&#x5927;&#x751F;&#x6210;&#x6811;&#x7684;&#x7B97;&#x6CD5;&#x4E0E;&#x6C42;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&#x7684;&#x7B97;&#x6CD5;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x662F;&#x628A;&#x6BCF;&#x6B21;&#x9009;&#x62E9;&#x6700;&#x5C0F;&#x503C;&#x6362;&#x6210;&#x9009;&#x62E9;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>&#x80FD;&#x6EE1;&#x8DB3;&#x6240;&#x6C42;&#x7684;&#x8DEF;&#x5F84;&#x5373;&#x4E3A;&#x6700;&#x5927;&#x751F;&#x6210;&#x6811;&#x4E0A;&#x4E24;&#x70B9;&#x95F4;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x3002;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x8BE2;&#x95EE;&#xFF0C;&#x5728;&#x6700;&#x5927;&#x751F;&#x6210;&#x6811;&#x4E0A;&#x6C42;&#x4E24;&#x70B9;&#x7684; LCA&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x4E24;&#x4E2A;&#x70B9;&#x4F9D;&#x6B21;&#x5411;&#x4E0A;&#x8D70;&#x5230; LCA&#xFF0C;&#x6C42;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6700;&#x5C0F;&#x8FB9;&#x6743;&#x5373;&#x4E3A;&#x8FD9;&#x4E2A;&#x8BE2;&#x95EE;&#x7684;&#x7B54;&#x6848;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x56FE;&#x4E0D;&#x4FDD;&#x8BC1;&#x8054;&#x901A;&#xFF0C;&#x56E0;&#x6B64;&#x6C42; LCA &#x7684;&#x65F6;&#x5019;&#x5E94;&#x5224;&#x65AD;&#x4E24;&#x70B9;&#x662F;&#x5426;&#x5728;&#x6700;&#x5927;&#x751F;&#x6210;&#x68EE;&#x6797;&#xFF08;&#x2026;&#x2026;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x53EB;&#x5417;&#xFF09;&#x4E2D;&#x7684;&#x540C;&#x4E00;&#x68F5;&#x6811;&#x4E0A;&#xFF0C;&#x4E0D;&#x662F;&#x7684;&#x8BDD;&#x8F93;&#x51FA; <code>-1</code> &#x3002;</p>
+<h1 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h1>
+<p>&#xFF08;&#x5199;&#x5F97;&#x53C8;&#x4E11;&#x53C8;&#x957F;&#xFF08;&#x5411;&#x6700;&#x5927;&#x751F;&#x6210;&#x6811;&#x4E2D;&#x52A0;&#x8FB9;&#x90A3;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x975E;&#x5E38;&#x6BD2;&#x7624;&#xFF08;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x5199;&#x5230;&#x540E;&#x6765;&#x53D1;&#x73B0;&#x4E0D;&#x5BF9;&#x4F46;&#x662F;&#x61D2;&#x5F97;&#x91CD;&#x6784;&#x4E86;&#xFF08;&#x9003;</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ctime&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;climits&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">10000</span> + <span class="hljs-number">5</span>, MAXM = <span class="hljs-number">50000</span> + <span class="hljs-number">5</span>;
+
+<span class="hljs-keyword">int</span> n, m, q, ans;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">DisjointSet</span> {</span>
+    <span class="hljs-keyword">int</span> fa[MAXN], rank[MAXN];
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{
+        <span class="hljs-keyword">return</span> x == fa[x] ? x : (fa[x] = find(fa[x]));
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{
+        x = find(x);
+        y = find(y);
+        <span class="hljs-keyword">if</span> (x == y)
+            <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">if</span> (rank[x] &gt; rank[y])
+            <span class="hljs-built_in">std</span>::swap(x, y);
+        <span class="hljs-keyword">if</span> (rank[x] &lt; rank[y]) {
+            fa[x] = y;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (rand() % <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span>) {
+                fa[x] = y;
+                rank[y]++;
+            } <span class="hljs-keyword">else</span> {
+                fa[y] = x;
+                rank[x]++;
+            }
+        }
+    }
+
+    DisjointSet(<span class="hljs-keyword">int</span> n) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) {
+            fa[i] = i;
+        }
+    }
+};
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>;</span>
+
+Edge *head[MAXN], *hmst[MAXN];
+<span class="hljs-keyword">int</span> cnt;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span> {</span>
+    <span class="hljs-keyword">int</span> from, to, weight;
+    Edge *next;
+
+    Edge() {}
+    Edge(<span class="hljs-keyword">int</span> f, <span class="hljs-keyword">int</span> t, <span class="hljs-keyword">int</span> w) : from(f), to(t), weight(w), next(head[f]) {}
+    Edge(<span class="hljs-keyword">int</span> f, <span class="hljs-keyword">int</span> t, <span class="hljs-keyword">int</span> w, <span class="hljs-keyword">int</span> flag) : from(f), to(t), weight(w), next(hmst[f]) {}
+} edge[MAXM];
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addEdge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> f, <span class="hljs-keyword">int</span> t, <span class="hljs-keyword">int</span> w)</span> </span>{
+    head[f] = <span class="hljs-keyword">new</span> Edge(f, t, w);
+    head[t] = <span class="hljs-keyword">new</span> Edge(t, f, w);
+    edge[++cnt] = *head[f];
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addMSTEdge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> f, <span class="hljs-keyword">int</span> t, <span class="hljs-keyword">int</span> w)</span> </span>{
+    hmst[f] = <span class="hljs-keyword">new</span> Edge(f, t, w, <span class="hljs-number">0</span>);
+    hmst[t] = <span class="hljs-keyword">new</span> Edge(t, f, w, <span class="hljs-number">0</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">kruskal</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::sort(edge + <span class="hljs-number">1</span>, edge + m + <span class="hljs-number">1</span>, [](<span class="hljs-keyword">const</span> Edge &amp;a, <span class="hljs-keyword">const</span> Edge &amp;b) -&gt; <span class="hljs-keyword">bool</span> {
+       <span class="hljs-keyword">return</span> a.weight &gt; b.weight;
+    });
+    cnt = <span class="hljs-number">0</span>;
+    <span class="hljs-function">DisjointSet <span class="hljs-title">ds</span><span class="hljs-params">(n)</span></span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) {
+        <span class="hljs-keyword">if</span> (cnt == <span class="hljs-number">2</span> * n - <span class="hljs-number">2</span>)
+            <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">if</span> (ds.find(edge[i].from) != ds.find(edge[i].to))
+        {
+            ds.merge(edge[i].from, edge[i].to);
+            addMSTEdge(edge[i].from, edge[i].to, edge[i].weight);
+            cnt++;
+        }
+    }
+}
+
+<span class="hljs-keyword">bool</span> vis[MAXN];
+<span class="hljs-keyword">int</span> f[MAXN][<span class="hljs-number">15</span>], dep[MAXN], log_2[MAXN], faw[MAXN];
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initlog</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) {
+        log_2[i] = (log_2[i - <span class="hljs-number">1</span>]) + (<span class="hljs-number">1</span> &lt;&lt; log_2[i - <span class="hljs-number">1</span>] == i);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> fa)</span> </span>{
+    vis[x] = <span class="hljs-literal">true</span>;
+    f[x][<span class="hljs-number">0</span>] = fa;
+    dep[x] = dep[fa] + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; (<span class="hljs-number">1</span> &lt;&lt; j) &lt;= dep[x]; ++j) {
+        f[x][j] = f[f[x][j - <span class="hljs-number">1</span>]][j - <span class="hljs-number">1</span>];
+    }
+    <span class="hljs-keyword">for</span> (Edge *e = hmst[x]; e; e = e-&gt;next) {
+        <span class="hljs-keyword">if</span> (!vis[e-&gt;to]) {
+            dfs(e-&gt;to, x);
+            faw[e-&gt;to] = e-&gt;weight;
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lca</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{
+    <span class="hljs-keyword">if</span> (dep[x] &lt; dep[y])
+        <span class="hljs-built_in">std</span>::swap(x, y);
+    <span class="hljs-keyword">while</span> (dep[x] &gt; dep[y]) {
+        x = f[x][log_2[dep[x] - dep[y]] - <span class="hljs-number">1</span>];
+    }
+    <span class="hljs-keyword">if</span> (x == y)
+        <span class="hljs-keyword">return</span> x;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = log_2[dep[x]]; j &gt;= <span class="hljs-number">0</span>; --j) {
+        <span class="hljs-keyword">if</span> (f[x][j] == f[y][j])
+            <span class="hljs-keyword">continue</span>;
+        x = f[x][j];
+        y = f[y][j];
+    }
+    <span class="hljs-keyword">return</span> f[x][<span class="hljs-number">0</span>];
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);
+    <span class="hljs-keyword">int</span> x, y, z;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) {
+        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d %d&quot;</span>, &amp;x, &amp;y, &amp;z);
+        addEdge(x, y, z);
+    }
+    kruskal();
+    initlog();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) {
+        <span class="hljs-keyword">if</span> (!vis[i])
+            dfs(i, <span class="hljs-number">0</span>);
+    }
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;q);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= q; ++i) {
+        ans = INT_MAX;
+        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %d&quot;</span>, &amp;x, &amp;y);
+        z = lca(x, y);
+        <span class="hljs-keyword">if</span> (z != <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">while</span> (x != z) {
+                ans = <span class="hljs-built_in">std</span>::min(ans, faw[x]);
+                x = f[x][<span class="hljs-number">0</span>];
+            }
+            <span class="hljs-keyword">while</span> (y != z) {
+                ans = <span class="hljs-built_in">std</span>::min(ans, faw[y]);
+                y = f[y][<span class="hljs-number">0</span>];
+            }
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;-1&quot;</span>);
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre>
+<p>Finita la commedia.</p>
+</div><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/styles/default.min.css"><script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

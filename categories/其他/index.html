@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh_CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script><script src="/js/loadCSS.js"></script><script>loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
+(function (d) {
+    var config = {
+            kitId: 'dwg1tuc',
+            scriptTimeout: 3000,
+            async: true
+        },
+        h = d.documentElement, t = setTimeout(function () {
+            h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+        }, config.scriptTimeout), tk = d.createElement("script"), f = false,
+        s = d.getElementsByTagName("script")[0], a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try {
+            Typekit.load(config)
+        } catch (e) {
+        }
+    };
+    s.parentNode.insertBefore(tk, s)
+})(document);</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons"></noscript><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/favicon.png"><title>Anonymous Sea</title><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Anonymous Sea" type="application/atom+xml">
+</head><body>　　<div class="outer"><ul class="list-group"><li class="list-group-item title"><div class="date">2018年12月23日</div><br><a href="/2018/12/23/Make-Windows-Boot-USB-Under-Linux/" target="_blank">在 Linux 下制作 Windows 启动盘</a></li><li class="list-group-item title"><div class="date">2018年10月8日</div><br><a href="/2018/10/08/Hexo-Math-Katex/" target="_blank">为 Hexo 更换数学渲染引擎为 KaTeX</a></li><li class="list-group-item title"><div class="date">2018年8月21日</div><br><a href="/2018/08/21/syzoj-setup/" target="_blank">SYZOJ 部署指南</a></li></ul></div><div class="paginator"><span class="page-number current">1</span></div><div class="footer"><p class="text-center">© Hanwen Guo</p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>
